@@ -20,7 +20,7 @@ The Amplify Admin UI is an AWS service that gives customers an external console 
 ### Bookmarks
 
 * [Sandbox](https://sandbox.amplifyapp.com)
-* [Official documentation](https://docs.amplify.aws/cli)
+* [Official documentation](https://docs.amplify.aws/console)
 
 ### Other Amplify projects
 
