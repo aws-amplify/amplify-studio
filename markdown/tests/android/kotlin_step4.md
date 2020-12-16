@@ -23,6 +23,7 @@ dependencies {
 ```
 ```gradle
     // Amplify plugins
+    implementation 'com.amplifyframework:core:1.6.5'
     implementation 'com.amplifyframework:aws-api:1.6.5'
     implementation 'com.amplifyframework:aws-datastore:1.6.5'
 
