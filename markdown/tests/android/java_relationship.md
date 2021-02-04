@@ -119,7 +119,7 @@ In one-to-many relationships, deleting the source model will automatically delet
 ```java
 Amplify.DataStore.query(Publication.class, Where.id("YOUR_PUBLICATION_ID"),
         matchedPublications -> {
-            while(matchedPublications.hasNext()) {
+            while (matchedPublications.hasNext()) {
                 Publication match = matchedPublications.next();
                 Amplify.DataStore.delete(match,
                         deleted -> Log.i("Amplify DataStore", "Publication and all related Article instances deleted"),
