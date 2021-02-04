@@ -112,7 +112,7 @@ Amplify.DataStore.query(Article::class.java, Where.matches(Article.PUBLICATION_I
 
 **Delete**
 
-In one-to-many relationships, deleting the source model will automatically delete all target models that belong to it, both locally, and on the backend.
+In one-to-many relationships, deleting the source model will automatically delete all target models that belong to it, both locally and on the backend.
 
 ```kt
 Amplify.DataStore.query(Publication::class.java, Where.id("YOUR_PUBLICATION_ID"),
