@@ -48,11 +48,21 @@ In one-to-one relationships, if the target model instance is deleted, it will al
 
 ```kt
 Amplify.DataStore.delete(newAuthor,
-        { Log.i("Amplify DataStore", "Author + Post deleted") },
+        { Log.i("Amplify DataStore", "Author deleted and relationship cleared on Post") },
         { failure -> Log.e("Amplify DataStore", "Deletion failed", failure) })
 ```
 
 In this example, the `Post`'s "author" field will be cleared and the `Author` model instance will be deleted.
+
+If the source model is deleted, the target model will be automatically deleted as well.  
+
+```kt
+Amplify.DataStore.delete(post,
+        { Log.i("Amplify DataStore", "Author + Post deleted") },
+        { failure -> Log.e("Amplify DataStore", "Deletion failed", failure) })
+```
+
+In this example, the `Post` model instance will be deleted and the `Author` model instance will be deleted, locally, and on the backend.
 
 :::NEW_COMMAND:::
 :::ONE_TO_MANY:::
@@ -102,29 +112,19 @@ Amplify.DataStore.query(Article::class.java, Where.matches(Article.PUBLICATION_I
 
 **Delete**
 
-In one-to-many relationships, delete the target model instance first and then delete the source model.
+In one-to-many relationships, deleting the source model will automatically delete all target models that belong to it, both locally, and on the backend.
 
 ```kt
-Amplify.DataStore.query(Article::class.java, Where.matches(Article.PUBLICATION_ID.eq("YOUR_PUBLICATION_ID")),
-        { matches ->
-            while (matches.hasNext()) {
-                val article = matches.next()
-                Amplify.DataStore.delete(article!!,
-                        { deletedArticle -> Log.i("Amplify DataStore", "Article deleted") },
-                        { failure -> Log.e("Amplify DataStore", "Deletion failed.", failure)})
-            }
-            Amplify.DataStore.query(Publication::class.java, Where.id("YOUR_PUBLICATION_ID"),
-                    { matchedPublications ->
-                        while (matchedPublications.hasNext()) {
-                            val match: Publication = matchedPublications.next()
-                            Amplify.DataStore.delete(match,
-                                    { deleted -> Log.i("Amplify DataStore", "Publication deleted") },
-                                    { failure -> Log.e("Amplify DataStore", "Deletion failed.", failure) })
-                        }
-                    }
-            ) { failure -> Log.e("Amplify DataStore", "Query failed.", failure) }
+Amplify.DataStore.query(Publication::class.java, Where.id("YOUR_PUBLICATION_ID"),
+        { matchedPublications ->
+        while (matchedPublications.hasNext()) {
+                val match: Publication = matchedPublications.next()
+                Amplify.DataStore.delete(match,
+                        { deleted -> Log.i("Amplify DataStore", "Publication and all related Article instances deleted") },
+                        { failure -> Log.e("Amplify DataStore", "Deletion failed.", failure) })
         }
-) { failure -> Log.e("Amplify DataStore", "Query failed.", failure)}
+        }
+) { failure -> Log.e("Amplify DataStore", "Query failed.", failure) }
 ```
 
 In this example, the `Publication` with "YOUR_PUBLICATION_ID" and all of its related `Article` model instances will be deleted.
