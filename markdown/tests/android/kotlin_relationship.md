@@ -59,7 +59,7 @@ If the source model is deleted, the target model will be automatically deleted a
 ```kt
 Amplify.DataStore.delete(post,
         { Log.i("Amplify DataStore", "Author + Post deleted") },
-        { failure -> Log.e("Amplify DataStore", "Deletion failed", failure) })
+        { Log.e("Amplify DataStore", "Deletion failed", it) })
 ```
 
 In this example, the `Post` model instance will be deleted and the `Author` model instance will be deleted, locally, and on the backend.
