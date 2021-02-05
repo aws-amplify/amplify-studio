@@ -50,7 +50,7 @@ In one-to-one relationships, if the target model instance is deleted, it will al
 
 ```java
 Amplify.DataStore.delete(author,
-    deleted -> Log.i("Amplify DataStore", "Author deleted and relationship cleared on Post"),
+    deleted -> Log.i("Amplify DataStore", "Author deleted."),
     failure -> Log.e("Amplify DataStore", "Deletion failed", failure));
 ```
 
