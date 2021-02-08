@@ -199,9 +199,8 @@ To query many-to-many relationships, filter the join model based on one of the m
 
 ```java
 
-QueryOptions contentTagConditions =
-    Where.matches(ContentTag.CONTENT.eq("YOUR_CONTENT_ID");
-Amplify.DataStore.query(ContentTag.class, contentTagConditions),
+QueryPredicate conditions = ContentTag.CONTENT.eq("YOUR_CONTENT_ID");
+Amplify.DataStore.query(ContentTag.class, Where.matches(conditions)),
     matchingContentTags -> {
         while (matchingContentTags.hasNext()) {
             ContentTag contentTag = matchingContentTags.next();
