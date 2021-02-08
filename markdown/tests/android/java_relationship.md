@@ -138,7 +138,6 @@ Amplify.DataStore.query(Article.class, Where.matches(conditions),
             },
             pubQueryFailure -> Log.e("DataStore", "Failed to query publications", pubQueryFailure)
         );
-    
     },
     articleQueryFailure -> Log.e("DataStore", "Failed to query articles", articleQueryFailure)
 );
