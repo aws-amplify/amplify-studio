@@ -17,7 +17,7 @@ try {
 :::NO_COPY:::
     Amplify.addPlugin(new AWSDataStorePlugin());
     Amplify.configure(getApplicationContext());
-} catch (AmplifyException error) {
-    Log.e("Amplify", "Could not initialize Amplify", error);
+} catch (AmplifyException failure) {
+    Log.e("Amplify", "Could not initialize Amplify", failure);
 }
 ```

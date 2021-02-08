@@ -1,43 +1,39 @@
 :::NEW_COMMAND:::
 :::CREATE:::
-```kt
-val item: :::MODEL::: = :::MODEL:::.builder()
+```kotlin
+val item = :::MODEL:::.builder()
     :::FIELDS:::
-                .build()
-Amplify.DataStore.save(
-        item,
-        { success -> Log.i("Amplify", "Saved item: " + success.item().name) },
-        { error -> Log.e("Amplify", "Could not save item to DataStore", error) }
+    .build()
+Amplify.DataStore.save(item,
+    { Log.i("DataStore", "Saved item: ${it.item().name}") },
+    { Log.e("DataStore", "Could not save item to DataStore", it) }
 )
 ```
 :::NEW_COMMAND:::
 :::UPDATE:::
-```kt
-Amplify.DataStore.save(
-        updatedItem,
-        { success -> Log.i("Amplify", "Updated item: " + success.item().name) },
-        { error -> Log.e("Amplify", "Could not save item to DataStore", error) }
+```kotlin
+Amplify.DataStore.save(updatedItem,
+    { Log.i("DataStore", "Updated item: ${it.item().name}") },
+    { Log.e("DataStore", "Could not save item to DataStore", it) }
 )
 ```
 :::NEW_COMMAND:::
 :::DELETE:::
-```kt
+```kotlin
 Amplify.DataStore.delete(toDeleteItem,
-    { deleted -> Log.i("Amplify", "Deleted item.") },
-    { failure -> Log.e("Amplify", "Delete failed.", failure) }
+    { Log.i("DataStore", "Deleted item") },
+    { Log.e("DataStore", "Delete failed", it) }
 )
 ```
 :::NEW_COMMAND:::
 :::QUERY:::
-```kt
-Amplify.DataStore.query(
-     :::MODEL:::::class.java,
-     { items ->
-         while (items.hasNext()) {
-             val item = items.next()
-             Log.i("Amplify", "Queried item: " + item.id)
-         }
-     },
-     { failure -> Log.e("Tutorial", "Could not query DataStore", failure) }
+```kotlin
+Amplify.DataStore.query(:::MODEL:::::class.java,
+    { matchingItems ->
+        while (matchingItems.hasNext()) {
+            Log.i("Amplify", "Queried item: ${matchingItems.next().id}")
+        }
+    },
+    { Log.e("DataStore", "Could not query DataStore", it) }
 )
 ```

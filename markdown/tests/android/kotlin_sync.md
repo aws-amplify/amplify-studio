@@ -18,7 +18,7 @@ try {
     Amplify.addPlugin(AWSDataStorePlugin())
     Amplify.configure(applicationContext)
     Log.i("Amplify", "Initialized Amplify")
-} catch (e: AmplifyException) {
-    Log.e("Amplify", "Could not initialize Amplify", e)
+} catch (failure: AmplifyException) {
+    Log.e("Amplify", "Could not initialize Amplify", failure)
 }
 ```
