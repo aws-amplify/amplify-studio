@@ -1,7 +1,4 @@
-Open **Android Studio** 
-
-Click **+ Start a new Flutter project**.
-
-Select **Flutter Application**.
-
-Click **Next**.
+- Open **Android Studio** 
+- Click **+ Start a new Flutter project**
+- Select **Flutter Application**
+- Click **Next**
