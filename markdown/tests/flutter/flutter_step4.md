@@ -28,7 +28,7 @@ platform :ios, '13.0'
 ```dart
 // Amplify Flutter Packages
 import 'package:amplify_flutter/amplify.dart';
-import 'package:amplify_api/amplify_api.dart';
+// import 'package:amplify_api/amplify_api.dart'; // UNCOMMENT this line once backend is deployed
 import 'package:amplify_datastore/amplify_datastore.dart';
 import 'package:amplify_datastore_plugin_interface/amplify_datastore_plugin_interface.dart';
 
