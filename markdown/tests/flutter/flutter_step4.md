@@ -15,7 +15,16 @@ dependencies:
 
 2. Click **Pub Get** in the "Flutter commands" bar to install Amplify Libraries
 
-3. Go to **main.dart** and add the following lines to initialize the Amplify Libraries:
+3. Open **ios/Podfile** and update the platform target:
+```ruby
+:::NO_COPY:::
+# Uncomment this line to define a global platform for your project
+```
+```ruby
+platform :ios, '13.0'
+```
+
+4. Go to **main.dart** and add the following lines to initialize the Amplify Libraries:
 ```dart
 // Amplify Flutter Packages
 import 'package:amplify_flutter/amplify.dart';
