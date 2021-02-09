@@ -1,6 +1,6 @@
 Amplify for Flutter is distributed via pub.dev.
 
-1. Add the dependencies to `pubspec.yaml`:
+1. Add the dependencies to **pubspec.yaml**:
 ```yaml
 :::NO_COPY:::
 dependencies:
