@@ -1,61 +1,57 @@
 Amplify for Flutter is distributed via pub.dev.
 
-1. Open your **app**'s `pubspec.yaml` and add the following 3 dependencies below the line "sdk:flutter".
-
+1. Add the dependencies to `pubspec.yaml`:
 ```yaml
+:::NO_COPY:::
 dependencies:
   flutter:
     sdk: flutter
-
+```
+```yaml
   amplify_flutter: "<1.0.0"
   amplify_api: "<1.0.0"
   amplify_datastore: "<1.0.0"
 ```
 
-2. Run **Flutter Pub Get**
+2. Click **Pub Get** in the "Flutter commands" bar to install Amplify Libraries
 
-Android Studio requires you to sync your project with your new configuration. To do this, you can click **Flutter** in the notification bar above the file editor.
-
-Alternatively, you can open a terminal window, cd into your project's root directory (where your pubspec.yaml is) and run:
-
-```bash
-flutter pub get
-```
-
-When complete, you will see _Process finished with exit code 0_ in the output of the _Messages_ tab at the bottom of your screen.
-
-3. Before using any methods in the Amplify Flutter Library, it's important to add all necessary plugins and to call configure once in your app. The steps below will guide you through configuring Amplify Flutter at the root level of your flutter app.
-
-Import the necessary dart dependencies at the top of main.dart:
-
+3. Go to **main.dart** and add the following lines to initialize the Amplify Libraries:
 ```dart
 // Amplify Flutter Packages
 import 'package:amplify_flutter/amplify.dart';
+import 'package:amplify_api/amplify_api.dart';
 import 'package:amplify_datastore/amplify_datastore.dart';
 import 'package:amplify_datastore_plugin_interface/amplify_datastore_plugin_interface.dart';
 
 // Generated in previous step
-import 'codegen/ModelProvider.dart';
+import 'models/ModelProvider.dart';
 import 'amplifyconfiguration.dart';
 ```
-
-Add the following code to your application's root Stateful Widget, for a blank Flutter app this should be the `class _MyHomePageState extends State<MyHomePage>`.
-
 ```dart
-
+:::NO_COPY:::
+//...
 class _MyHomePageState extends State<MyHomePage> {
-
+```
+```dart
   bool _amplifyConfigured = false;
-
+```
+```dart
+:::NO_COPY:::
   @override
   initState() {
+```
+```dart
     super.initState();
     _configureAmplify();
+```
+```dart
+:::NO_COPY:::
   }
-
+```
+```dart
   void _configureAmplify() async {
 
-    Amplify.addPlugin(AmplifyAPI()); // UNCOMMENT this line once backend is deployed
+    // Amplify.addPlugin(AmplifyAPI()); // UNCOMMENT this line once backend is deployed
     Amplify.addPlugin(AmplifyDataStore(modelProvider: ModelProvider.instance));
 
     // Once Plugins are added, configure Amplify
@@ -67,7 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
     } catch (e) {
       print(e);
     }
-
   }
+```
+```dart
+:::NO_COPY:::
 }
 ```
