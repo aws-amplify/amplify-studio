@@ -2,7 +2,7 @@
 :::CREATE:::
 
 ```dart
-:::MODEL::: item = :::MODEL:::(:::FIELDS:::)
+final item = :::MODEL:::(:::FIELDS:::);
 await Amplify.DataStore.save(item);
 ```
 
