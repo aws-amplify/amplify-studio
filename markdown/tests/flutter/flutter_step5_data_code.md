@@ -10,6 +10,7 @@ await Amplify.DataStore.save(item);
 :::UPDATE:::
 
 ```dart
+final updatedItem = item.copyWith(:::FIELDS:::);
 await Amplify.DataStore.save(updatedItem);
 ```
 
