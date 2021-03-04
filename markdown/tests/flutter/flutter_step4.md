@@ -24,6 +24,26 @@ dependencies:
 platform :ios, '13.0'
 ```
 
+If you are using Flutter v2 and encountering build errors involving minimum deployment targets, you may need to update your app's `Podfile` in the `ios` directory.
+You should update the post_install hook to include the following:
+
+```ruby
+:::NO_COPY:::
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+```
+```ruby
+    target.build_configurations.each do |config|
+      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+    end
+```
+```ruby
+:::NO_COPY:::
+   end
+ end
+ ```
+
 4. (Android only) Open **android/app/build.gradle** and update the *minSdkVersion*:
 ```gradle
 :::NO_COPY:::
