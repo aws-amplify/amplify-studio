@@ -24,7 +24,7 @@ dependencies:
 platform :ios, '13.0'
 ```
 
-If you are using Flutter v2 and encountering build errors involving minimum deployment targets, you may need to update your app's `Podfile` in the `ios` directory.
+For Flutter v2, you need to update `ios/Podfile` to account for minimum deployment targets
 You should update the post_install hook to include the following:
 
 ```ruby
