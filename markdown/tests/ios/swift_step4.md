@@ -1,47 +1,25 @@
-Amplify dependencies are installed through CocoaPods. Open a terminal window and navigate to the location of the Xcode project for your app.
+Amplify dependencies can be installed with Swift Package Manager. Open your iOS project in Xcode.
 
-1. Initialize CocoaPods:
-```bash
-pod init
+1. Open **Package Dependency** by selecting **File** > **Swift Packages** > **Add Package Dependency...**
+
+2. Enter the Amplify iOS GitHub repository URL in the **search bar**:
+```
+https://github.com/aws-amplify/amplify-ios
 ```
 
-2. Update the **Podfile** to include the following pods:
-```ruby
-:::NO_COPY:::
-target '<YOUR_APP_NAME>' do
-    use_frameworks!
+3. Select the **Version** option for the Rules and click **Next**
 
-    # Pods for <YOUR_APP_NAME>
-```
-```ruby
-    pod 'Amplify'
-    pod 'AmplifyPlugins/AWSAPIPlugin'
-    pod 'AmplifyPlugins/AWSDataStorePlugin'
-```
-```ruby
-:::NO_COPY:::
-    target '<YOUR_APP_NAME>Tests' do
-        ...
-    end
-end
-```
+4. Select the following plugins:
+- Amplify
+- AWSPluginsCore
+- AWSDataStorePlugin
+- AWSAPIPlugin
 
-3. Install the Amplify pod into your project:
-```bash
-pod install --repo-update
-```
-
-4. **Close** your existing Xcode window
-
-5. Open the new Xcode workspace file
-```
-xed .
-```
-
-6. Go to **<YOUR_APP_NAME>App.swift** and add the following lines to initialize Amplify libraries:
+5. Go to **<YOUR_APP_NAME>App.swift** and add the following lines to initialize Amplify libraries:
 ```swift
 import Amplify
-import AmplifyPlugins
+import AWSDataStorePlugin
+//import AWSAPIPlugin // UNCOMMENT this line once backend is deployed
 ```
 
 ```swift
