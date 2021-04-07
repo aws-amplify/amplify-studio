@@ -1,25 +1,19 @@
 Amplify dependencies can be installed with Swift Package Manager. Open your iOS project in Xcode.
 
-1. Open Package Dependency window:
-```
-:::NO_COPY:::
-File > Swift Packages > Add Package Dependency...
-```
+1. Open **Package Dependency** by selecting **File** > **Swift Packages** > **Add Package Dependency...**
 
-2. Enter the Amplify iOS GitHub reposoitory URL in the search bar:
+2. Enter the Amplify iOS GitHub repository URL in the **search bar**:
 ```
 https://github.com/aws-amplify/amplify-ios
 ```
 
-![Search for Amplify iOS Repo](/assets/ios/search-amplify-repo.png)
+3. Select the **Version** option for the Rules and click **Next**
 
-3. Select the Version option for the Rules and click Next:
-
-![Dependency Version options](/assets/ios/dependency-version-options.png)
-
-4. Select the `Amplify`, `AWSPluginsCore`, `AWSDataStorePlugin`, and `AWSAPIPlugin` (optional) plugins.
-
-![Select Dependencies](/assets/ios/select-dependencies.png)
+4. Select the following plugins:
+- Amplify
+- AWSPluginsCore
+- AWSDataStorePlugin
+- AWSAPIPlugin
 
 5. Go to **<YOUR_APP_NAME>App.swift** and add the following lines to initialize Amplify libraries:
 ```swift
