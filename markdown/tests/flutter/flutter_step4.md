@@ -8,9 +8,9 @@ dependencies:
     sdk: flutter
 ```
 ```yaml
-  amplify_flutter: "<1.0.0"
-  # amplify_api: "<1.0.0" // UNCOMMENT this line once backend is deployed
-  amplify_datastore: "<1.0.0"
+  amplify_flutter: ^0.2.0
+  amplify_datastore: ^0.2.0
+  # amplify_api: ^0.2.0 // UNCOMMENT this line after backend is deployed
 ```
 
 2. Click **Pub Get** in the "Flutter commands" bar to install Amplify Libraries
@@ -23,26 +23,6 @@ dependencies:
 ```ruby
 platform :ios, '13.0'
 ```
-
-For Flutter v2, you need to update `ios/Podfile` to account for minimum deployment targets
-You should update the post_install hook to include the following:
-
-```ruby
-:::NO_COPY:::
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    flutter_additional_ios_build_settings(target)
-```
-```ruby
-    target.build_configurations.each do |config|
-      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
-    end
-```
-```ruby
-:::NO_COPY:::
-   end
- end
- ```
 
 4. (Android only) Open **android/app/build.gradle** and update the *minSdkVersion*:
 ```gradle
@@ -59,7 +39,7 @@ android {
 ```
 ```gradle
 :::NO_COPY:::
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -71,8 +51,8 @@ android {
 ```dart
 // Amplify Flutter Packages
 import 'package:amplify_flutter/amplify.dart';
-// import 'package:amplify_api/amplify_api.dart'; // UNCOMMENT this line once backend is deployed
 import 'package:amplify_datastore/amplify_datastore.dart';
+// import 'package:amplify_api/amplify_api.dart'; // UNCOMMENT this line after backend is deployed
 
 // Generated in previous step
 import 'models/ModelProvider.dart';
@@ -102,8 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
 ```dart
   void _configureAmplify() async {
 
-    // Amplify.addPlugin(AmplifyAPI()); // UNCOMMENT this line once backend is deployed
-    Amplify.addPlugin(AmplifyDataStore(modelProvider: ModelProvider.instance));
+    // await Amplify.addPlugin(AmplifyAPI()); // UNCOMMENT this line after backend is deployed
+    await Amplify.addPlugin(AmplifyDataStore(modelProvider: ModelProvider.instance));
 
     // Once Plugins are added, configure Amplify
     await Amplify.configure(amplifyconfig);
