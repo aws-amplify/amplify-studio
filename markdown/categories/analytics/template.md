@@ -2,7 +2,7 @@
 
 ## Add functions to handle your application business logic. Use these functions to securely extend your app with custom business logic. Powered by AWS Lambda.
 
-[Image](https://raw.githubusercontent.com/aws-amplify/amplify-adminui/5938d6fb289a899ab99b097b8f2bdf14ee36ea0c/markdown/categories/analytics/img.svg)
+[Image](https://raw.githubusercontent.com/aws-amplify/amplify-adminui/feat/sandbox-v2/markdown/categories/analytics/img.png)
 
 :::DESCRIPTION:::
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla velit nulla, consequat sed vulputate ac, maximus vitae metus. Donec eget quam massa. Vivamus tincidunt ultricies tellus sed pharetra. Integer euismod elit ac bibendum tempor. Morbi vel enim a turpis gravida iaculis sit amet id diam. Duis pharetra lorem sapien. Cras tempor, turpis volutpat placerat fermentum, arcu ipsum blandit tortor, eget congue purus sapien et nunc. Aliquam id tellus ac nunc fringilla interdum id id magna.
