@@ -18,5 +18,5 @@ Pellentesque scelerisque luctus elit. Quisque id ante arcu. Morbi sagittis biben
 :::KEY_FEATURES_END:::
 
 :::VIDEO_WALKTHROUGH:::
-https://www.youtube.com/embed/7ekxPmVNV8
+https://www.youtube-nocookie.com/embed/7ekxPmVNV8k
 :::VIDEO_WALKTHROUGH_END:::
