@@ -1,6 +1,6 @@
 # Amplify Notifications
 
-## Add functions to handle your application business logic. Use these functions to securely extend your app with custom business logic. Powered by AWS Lambda.
+## Improve customer engagement by using marketing and analytics capabilities.
 
 [Image](https://raw.githubusercontent.com/aws-amplify/amplify-adminui/feat/sandbox-v2/markdown/categories/notifications/img.png)
 
