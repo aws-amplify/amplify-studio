@@ -1,22 +1,20 @@
 # Amplify Analytics
 
-## Understand the behavior of your web, iOS or Android users.
+## Understand the behavior of your end users.
 
 [Image](https://raw.githubusercontent.com/aws-amplify/amplify-adminui/feat/sandbox-v2/markdown/categories/analytics/img.png)
 
 :::DESCRIPTION:::
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla velit nulla, consequat sed vulputate ac, maximus vitae metus. Donec eget quam massa. Vivamus tincidunt ultricies tellus sed pharetra. Integer euismod elit ac bibendum tempor. Morbi vel enim a turpis gravida iaculis sit amet id diam. Duis pharetra lorem sapien. Cras tempor, turpis volutpat placerat fermentum, arcu ipsum blandit tortor, eget congue purus sapien et nunc. Aliquam id tellus ac nunc fringilla interdum id id magna.
-
-Pellentesque scelerisque luctus elit. Quisque id ante arcu. Morbi sagittis bibendum ipsum, in dictum nulla eleifend sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque nisi nunc, cursus vel nulla pellentesque, elementum blandit augue. Nunc aliquet iaculis lorem. Proin pretium ipsum ut lorem pulvinar, nec sagittis magna sodales. Aliquam vehicula pretium volutpat. Sed aliquet diam sit amet fermentum tristique. Pellentesque pretium est ut finibus viverra.
+The Analytics category enables you to collect analytics data for your App. The Analytics category comes with built-in support for Amazon Pinpoint and Amazon Kinesis.
 :::DESCRIPTION_END:::
 
 
 :::KEY_FEATURES:::
-1. Feature #1
-2. Feature #2
-3. Feature #3
+1. User analytics
+2. Automatic session tracking
+3. Streaming analytics data
 :::KEY_FEATURES_END:::
 
 :::VIDEO_WALKTHROUGH:::
-https://www.youtube-nocookie.com/embed/7ekxPmVNV8k
+https://www.youtube-nocookie.com/embed/fSDQx5ardmI
 :::VIDEO_WALKTHROUGH_END:::

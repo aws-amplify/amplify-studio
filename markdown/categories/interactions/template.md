@@ -5,16 +5,14 @@
 [Image](https://raw.githubusercontent.com/aws-amplify/amplify-adminui/feat/sandbox-v2/markdown/categories/interactions/img.png)
 
 :::DESCRIPTION:::
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla velit nulla, consequat sed vulputate ac, maximus vitae metus. Donec eget quam massa. Vivamus tincidunt ultricies tellus sed pharetra. Integer euismod elit ac bibendum tempor. Morbi vel enim a turpis gravida iaculis sit amet id diam. Duis pharetra lorem sapien. Cras tempor, turpis volutpat placerat fermentum, arcu ipsum blandit tortor, eget congue purus sapien et nunc. Aliquam id tellus ac nunc fringilla interdum id id magna.
-
-Pellentesque scelerisque luctus elit. Quisque id ante arcu. Morbi sagittis bibendum ipsum, in dictum nulla eleifend sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque nisi nunc, cursus vel nulla pellentesque, elementum blandit augue. Nunc aliquet iaculis lorem. Proin pretium ipsum ut lorem pulvinar, nec sagittis magna sodales. Aliquam vehicula pretium volutpat. Sed aliquet diam sit amet fermentum tristique. Pellentesque pretium est ut finibus viverra.
+AWS Amplify Interactions category enables AI-powered chatbots in your web or mobile apps. You can use Interactions to configure your backend chatbot provider and to integrate a chatbot UI into your app with just a single line of code.
 :::DESCRIPTION_END:::
 
 
 :::KEY_FEATURES:::
-1. Feature #1
-2. Feature #2
-3. Feature #3
+1. ChatBot UI componet
+2. Easy configuration
+3. Send message API
 :::KEY_FEATURES_END:::
 
 :::VIDEO_WALKTHROUGH:::

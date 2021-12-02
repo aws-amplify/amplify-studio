@@ -1,22 +1,20 @@
 # Amplify Hosting
 
-## Faster, easier static web hosting with continuous deployment using the AWS Amplify Console.
+## Fast, secure, and reliable hosting for modern web apps.
 
 [Image](https://raw.githubusercontent.com/aws-amplify/amplify-adminui/feat/sandbox-v2/markdown/categories/hosting/img.png)
 
 :::DESCRIPTION:::
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla velit nulla, consequat sed vulputate ac, maximus vitae metus. Donec eget quam massa. Vivamus tincidunt ultricies tellus sed pharetra. Integer euismod elit ac bibendum tempor. Morbi vel enim a turpis gravida iaculis sit amet id diam. Duis pharetra lorem sapien. Cras tempor, turpis volutpat placerat fermentum, arcu ipsum blandit tortor, eget congue purus sapien et nunc. Aliquam id tellus ac nunc fringilla interdum id id magna.
-
-Pellentesque scelerisque luctus elit. Quisque id ante arcu. Morbi sagittis bibendum ipsum, in dictum nulla eleifend sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque nisi nunc, cursus vel nulla pellentesque, elementum blandit augue. Nunc aliquet iaculis lorem. Proin pretium ipsum ut lorem pulvinar, nec sagittis magna sodales. Aliquam vehicula pretium volutpat. Sed aliquet diam sit amet fermentum tristique. Pellentesque pretium est ut finibus viverra.
+AWS Amplify Hosting is a fully managed CI/CD and hosting service for fast, secure, and reliable static and server-side rendered apps that scale with your business. Supports modern web frameworks such as React, Angular, Vue, Next.js, Gatsby, Hugo, Jekyll, and more. [Learn more](https://aws.amazon.com/amplify/hosting/)
 :::DESCRIPTION_END:::
 
 
 :::KEY_FEATURES:::
-1. Feature #1
-2. Feature #2
-3. Feature #3
+1. Full-stack CI/CD
+2. Pull request Previews
+3. Easy custom domain setup
 :::KEY_FEATURES_END:::
 
 :::VIDEO_WALKTHROUGH:::
-https://www.youtube-nocookie.com/embed/7ekxPmVNV8k
+https://www.youtube-nocookie.com/embed/DHLZAzdT44Y
 :::VIDEO_WALKTHROUGH_END:::

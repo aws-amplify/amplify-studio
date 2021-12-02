@@ -5,16 +5,15 @@
 [Image](https://raw.githubusercontent.com/aws-amplify/amplify-adminui/feat/sandbox-v2/markdown/categories/notifications/img.png)
 
 :::DESCRIPTION:::
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla velit nulla, consequat sed vulputate ac, maximus vitae metus. Donec eget quam massa. Vivamus tincidunt ultricies tellus sed pharetra. Integer euismod elit ac bibendum tempor. Morbi vel enim a turpis gravida iaculis sit amet id diam. Duis pharetra lorem sapien. Cras tempor, turpis volutpat placerat fermentum, arcu ipsum blandit tortor, eget congue purus sapien et nunc. Aliquam id tellus ac nunc fringilla interdum id id magna.
-
-Pellentesque scelerisque luctus elit. Quisque id ante arcu. Morbi sagittis bibendum ipsum, in dictum nulla eleifend sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque nisi nunc, cursus vel nulla pellentesque, elementum blandit augue. Nunc aliquet iaculis lorem. Proin pretium ipsum ut lorem pulvinar, nec sagittis magna sodales. Aliquam vehicula pretium volutpat. Sed aliquet diam sit amet fermentum tristique. Pellentesque pretium est ut finibus viverra.
+The Notifications category encompasses a set of use-cases that make it easy to engage end-users - currently support in-app messaging and push notifications.
+In-App Messaging helps you better engage your users with messages they can see while actively using your application. Send targeted messages to your defined user segments or even trigger contextual messages based on user behavior.
 :::DESCRIPTION_END:::
 
 
 :::KEY_FEATURES:::
-1. Feature #1
-2. Feature #2
-3. Feature #3
+1. In-app messaging
+2. Push notifications
+3. In-app UI components
 :::KEY_FEATURES_END:::
 
 :::VIDEO_WALKTHROUGH:::

@@ -1,22 +1,23 @@
-# Amplify REST API
+# Amplify GraphQL API
 
-## This API category provides a solution for making HTTP requests to REST endpoints.
+## Accelerate application development with scalable GraphQL and REST APIs, powered by AWS AppSync and Amazon API Gateway.
+
 
 [Image](https://raw.githubusercontent.com/aws-amplify/amplify-adminui/feat/sandbox-v2/markdown/categories/rest-api/img.png)
 
 :::DESCRIPTION:::
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla velit nulla, consequat sed vulputate ac, maximus vitae metus. Donec eget quam massa. Vivamus tincidunt ultricies tellus sed pharetra. Integer euismod elit ac bibendum tempor. Morbi vel enim a turpis gravida iaculis sit amet id diam. Duis pharetra lorem sapien. Cras tempor, turpis volutpat placerat fermentum, arcu ipsum blandit tortor, eget congue purus sapien et nunc. Aliquam id tellus ac nunc fringilla interdum id id magna.
+Organizations choose to build APIs with GraphQL because it helps them develop applications faster, by giving front-end developers the ability to query multiple databases, microservices, and APIs with a single GraphQL endpoint.
 
-Pellentesque scelerisque luctus elit. Quisque id ante arcu. Morbi sagittis bibendum ipsum, in dictum nulla eleifend sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque nisi nunc, cursus vel nulla pellentesque, elementum blandit augue. Nunc aliquet iaculis lorem. Proin pretium ipsum ut lorem pulvinar, nec sagittis magna sodales. Aliquam vehicula pretium volutpat. Sed aliquet diam sit amet fermentum tristique. Pellentesque pretium est ut finibus viverra.
+Amplify also offers a REST API category that can be used for creating signed requests against Amazon API Gateway.
 :::DESCRIPTION_END:::
 
 
 :::KEY_FEATURES:::
-1. Feature #1
-2. Feature #2
-3. Feature #3
+1. Real-time data access and updates
+2. Offline data synchronization
+3. Data querying, filtering, and search in apps
 :::KEY_FEATURES_END:::
 
 :::VIDEO_WALKTHROUGH:::
-https://www.youtube-nocookie.com/embed/7ekxPmVNV8k
+https://www.youtube-nocookie.com/embed/Rz_wK6z8kMU
 :::VIDEO_WALKTHROUGH_END:::

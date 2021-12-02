@@ -1,20 +1,18 @@
 # Amplify Authentication
 
-## Secure app authentication and authorization by Amazon Cognito.
+## Faster, easier secure app authentication and authorization, powered by Amazon Cognito.
 
 [Image](https://raw.githubusercontent.com/aws-amplify/amplify-adminui/feat/sandbox-v2/markdown/categories/auth/img.png)
 
 :::DESCRIPTION:::
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla velit nulla, consequat sed vulputate ac, maximus vitae metus. Donec eget quam massa. Vivamus tincidunt ultricies tellus sed pharetra. Integer euismod elit ac bibendum tempor. Morbi vel enim a turpis gravida iaculis sit amet id diam. Duis pharetra lorem sapien. Cras tempor, turpis volutpat placerat fermentum, arcu ipsum blandit tortor, eget congue purus sapien et nunc. Aliquam id tellus ac nunc fringilla interdum id id magna.
-
-Pellentesque scelerisque luctus elit. Quisque id ante arcu. Morbi sagittis bibendum ipsum, in dictum nulla eleifend sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque nisi nunc, cursus vel nulla pellentesque, elementum blandit augue. Nunc aliquet iaculis lorem. Proin pretium ipsum ut lorem pulvinar, nec sagittis magna sodales. Aliquam vehicula pretium volutpat. Sed aliquet diam sit amet fermentum tristique. Pellentesque pretium est ut finibus viverra.
+Amplify Auth lets you quickly set up secure authentication flows with a fully-managed user directory. Control what users have access to in your mobile and web apps with Amplify Auth's built-in authorization capabilities. Click options together or use guided commands to configure email and social sign-up/sign-in, forgot password, and multi-factor auth workflows.
 :::DESCRIPTION_END:::
 
 
 :::KEY_FEATURES:::
-1. Feature #1
-2. Feature #2
-3. Feature #3
+1. Intuitive configuration
+2. Login UI copmonent
+3. User authentication
 :::KEY_FEATURES_END:::
 
 :::VIDEO_WALKTHROUGH:::
