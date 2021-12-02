@@ -10,7 +10,7 @@ AWS Amplify Interactions category enables AI-powered chatbots in your web or mob
 
 
 :::KEY_FEATURES:::
-1. ChatBot UI componet
+1. ChatBot UI component
 2. Easy configuration
 3. Send message API
 :::KEY_FEATURES_END:::
