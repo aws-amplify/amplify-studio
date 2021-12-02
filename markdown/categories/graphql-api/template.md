@@ -3,7 +3,7 @@
 ## Accelerate application development with scalable GraphQL and REST APIs, powered by AWS AppSync and Amazon API Gateway.
 
 
-[Image](https://raw.githubusercontent.com/aws-amplify/amplify-adminui/feat/sandbox-v2/markdown/categories/rest-api/img.png)
+[Image](https://raw.githubusercontent.com/aws-amplify/amplify-adminui/feat/sandbox-v2/markdown/categories/graphql-api/img.png)
 
 :::DESCRIPTION:::
 Organizations choose to build APIs with GraphQL because it helps them develop applications faster, by giving front-end developers the ability to query multiple databases, microservices, and APIs with a single GraphQL endpoint.
