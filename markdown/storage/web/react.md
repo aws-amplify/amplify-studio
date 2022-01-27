@@ -1,10 +1,10 @@
 :::NEW_COMMAND:::
-:::UPLOAD-PUBLIC:::
+:::UPLOAD_PUBLIC:::
 ```js
 await Storage.put("test.txt", "Hello");
 ```
 :::NEW_COMMAND:::
-:::UPLOAD-PROTECTED:::
+:::UPLOAD_PROTECTED:::
 ```js
 await Storage.put('test.txt', 'Protected Content', {
     level: 'protected',
@@ -12,7 +12,7 @@ await Storage.put('test.txt', 'Protected Content', {
 });
 ```
 :::NEW_COMMAND:::
-:::UPLOAD-PRIVATE:::
+:::UPLOAD_PRIVATE:::
 ```js
 await Storage.put('test.txt', 'Private Content', {
     level: 'private',
@@ -20,14 +20,14 @@ await Storage.put('test.txt', 'Private Content', {
 });
 ```
 :::NEW_COMMAND:::
-:::DOWNLOAD-PUBLIC:::
+:::DOWNLOAD_PUBLIC:::
 ```js
 await Storage.get('test.txt', { 
     level: 'public'
 });
 ```
 :::NEW_COMMAND:::
-:::DOWNLOAD-PROTECTED:::
+:::DOWNLOAD_PROTECTED:::
 ```js
 await Storage.get('test.txt', { 
     level: 'protected'
@@ -35,21 +35,21 @@ await Storage.get('test.txt', {
 });
 ```
 :::NEW_COMMAND:::
-:::DOWNLOAD-PRIVATE:::
+:::DOWNLOAD_PRIVATE:::
 ```js
 await Storage.get('test.txt', { 
     level: 'private'
 });
 ```
 :::NEW_COMMAND:::
-:::LIST-PUBLIC:::
+:::LIST_PUBLIC:::
 ```js
 Storage.list('photos/') // for listing ALL files without prefix, pass '' instead
         .then(result => console.log(result))
         .catch(err => console.log(err));
 ```
 :::NEW_COMMAND:::
-:::LIST-PROTECTED:::
+:::LIST_PROTECTED:::
 ```js
 Storage.list('photos/', { 
         level: 'protected', 
@@ -59,24 +59,24 @@ Storage.list('photos/', {
     .catch(err => console.log(err));
 ```
 :::NEW_COMMAND:::
-:::LIST-PRIVATE:::
+:::LIST_PRIVATE:::
 ```js
 Storage.list('photos/', { level: 'private' })
         .then(result => console.log(result))
         .catch(err => console.log(err));
 ```
 :::NEW_COMMAND:::
-:::REMOVE-PUBLIC:::
+:::REMOVE_PUBLIC:::
 ```js
 await Storage.remove('test.txt');
 ```
 :::NEW_COMMAND:::
-:::REMOVE-PROTECTED:::
+:::REMOVE_PROTECTED:::
 ```js
 await Storage.remove('test.txt', { level: 'protected' });
 ```
 :::NEW_COMMAND:::
-:::REMOVE-PRIVATE:::
+:::REMOVE_PRIVATE:::
 ```js
 await Storage.remove('test.txt', { level: 'private' });
 ```
