@@ -1,61 +1,89 @@
 :::NEW_COMMAND:::
 UPLOAD_PUBLIC
 ```kt
-private void uploadFile() {
-    File exampleFile = new File(getApplicationContext().getFilesDir(), "ExampleKey");
-
-    try {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(exampleFile));
-        writer.append("Example file contents");
-        writer.close();
-    } catch (Exception exception) {
-        Log.e("MyAmplifyApp", "Upload failed", exception);
-    }
-
-    Amplify.Storage.uploadFile(
-            "ExampleKey",
-            exampleFile,
-            result -> Log.i("MyAmplifyApp", "Successfully uploaded: " + result.getKey()),
-            storageFailure -> Log.e("MyAmplifyApp", "Upload failed", storageFailure)
-    );
+private fun uploadFile(key: String, file: File) {
+    
+    Amplify.Storage.uploadFile(key, file,
+        { Log.i("MyAmplifyApp", "Successfully uploaded: $key" ) },
+        { error -> Log.e("MyAmplifyApp", "Upload failed", error) }
+    )
 }
 ```
 :::NEW_COMMAND:::
 UPLOAD_PROTECTED
 ```kt
-// code here
+private fun uploadFile(key: String, file: File) {
+    val options = StorageUploadFileOptions.builder()
+        .accessLevel(StorageAccessLevel.PROTECTED)
+        .build()
+    
+    Amplify.Storage.uploadFile(key, file, options,
+        { Log.i("MyAmplifyApp", "Successfully uploaded: $key" ) },
+        { error -> Log.e("MyAmplifyApp", "Upload failed", error) }
+    )
+}
 ```
 :::NEW_COMMAND:::
 UPLOAD_PRIVATE
 ```kt
-// code here
+private fun uploadFile(key: String, file: File) {
+    val options = StorageUploadFileOptions.builder()
+        .accessLevel(StorageAccessLevel.PRIVATE)
+        .build()
+    
+    Amplify.Storage.uploadFile(key, file, options,
+        { Log.i("MyAmplifyApp", "Successfully uploaded: $key" ) },
+        { error -> Log.e("MyAmplifyApp", "Upload failed", error) }
+    )
+}
 ```
 :::NEW_COMMAND:::
 DOWNLOAD_PUBLIC
 ```kt
-val file = File("\${applicationContext.filesDir}/test.txt")
-Amplify.Storage.downloadFile("ExampleKey", file,
-    { Log.i("MyAmplifyApp", "Successfully downloaded: \${it.file.name}") },
-    { Log.e("MyAmplifyApp",  "Download Failure", it) }
-)
+private fun downloadFile(file: File, key: String) {
+    
+    Amplify.Storage.downloadFile(key, file,
+        { Log.i("MyAmplifyApp", "Successfully downloaded: $key") },
+        { error -> Log.e("MyAmplifyApp", "Download failed", error) }
+    )
+}
 ```
 :::NEW_COMMAND:::
 DOWNLOAD_PROTECTED
 ```kt
-// code here
+private fun downloadFile(file: File, key: String, otherIdentityId: String) {
+    val options = StorageDownloadFileOptions.builder()
+        .accessLevel(StorageAccessLevel.PROTECTED)
+        .targetIdentityId(otherIdentityId)
+        .build()
+    
+    Amplify.Storage.downloadFile(key, file, options,
+        { Log.i("MyAmplifyApp", "Successfully downloaded: $key") },
+        { error -> Log.e("MyAmplifyApp", "Download failed", error) }
+    )
+}
 ```
 :::NEW_COMMAND:::
 DOWNLOAD_PRIVATE
 ```kt
-// code here
+private fun downloadFile(file: File, key: String) {
+    val options = StorageDownloadFileOptions.builder()
+        .accessLevel(StorageAccessLevel.PRIVATE)
+        .build()
+    
+    Amplify.Storage.downloadFile(key, file, options,
+        { Log.i("MyAmplifyApp", "Successfully downloaded: $key") },
+        { error -> Log.e("MyAmplifyApp", "Download failed", error) }
+    )
+}
 ```
 :::NEW_COMMAND:::
 LIST_PUBLIC
 ```kt
-Amplify.Storage.list("/",
+Amplify.Storage.list("",
     { result ->
         result.items.forEach { item ->
-            Log.i("MyAmplifyApp", "Item: \${item.key}")
+            Log.i("MyAmplifyApp", "Item: ${item.key}")
         }
     },
     { Log.e("MyAmplifyApp", "List failure", it) }
@@ -69,10 +97,10 @@ val options = StorageListOptions.builder()
     .targetIdentityId("otherUserID")
     .build()
 
-Amplify.Storage.list("/", options,
+Amplify.Storage.list("", options,
     { result ->
         result.items.forEach { item ->
-            Log.i("MyAmplifyApp", "Item: \${item.key}")
+            Log.i("MyAmplifyApp", "Item: ${item.key}")
         }
     },
     { Log.e("MyAmplifyApp", "List failure", it) }
@@ -83,13 +111,12 @@ LIST_PRIVATE
 ```kt
 val options = StorageListOptions.builder()
     .accessLevel(StorageAccessLevel.PRIVATE)
-    .targetIdentityId("otherUserID")
     .build()
 
-Amplify.Storage.list("/", options,
+Amplify.Storage.list("", options,
     { result ->
         result.items.forEach { item ->
-            Log.i("MyAmplifyApp", "Item: \${item.key}")
+            Log.i("MyAmplifyApp", "Item: ${item.key}")
         }
     },
     { Log.e("MyAmplifyApp", "List failure", it) }
@@ -98,18 +125,32 @@ Amplify.Storage.list("/", options,
 :::NEW_COMMAND:::
 REMOVE_PUBLIC
 ```kt
-Amplify.Storage.remove("test.txt", 
-    { Log.i("MyAmplifyApp", "Successfully removed: \${it.key}") }, 
-    { Log.e("MyAmplifyApp", "Remove failure", it) } 
-)
+Amplify.Storage.remove("myUploadedFileName.txt",
+    { Log.i("MyAmplifyApp", "Successfully removed: ${it.key}") },
+    { Log.e("MyAmplifyApp", "Remove failure", it) } )
 ```
 :::NEW_COMMAND:::
 REMOVE_PROTECTED
 ```kt
-// code here
+val options = StorageRemoveOptions.builder()
+    .accessLevel(StorageAccessLevel.PROTECTED)
+    .targetIdentityId("otherUserID")
+    .build()
+
+Amplify.Storage.remove("myUploadedFileName.txt",
+    options,
+    { Log.i("MyAmplifyApp", "Successfully removed: ${it.key}") },
+    { Log.e("MyAmplifyApp", "Remove failure", it) } )
 ```
 :::NEW_COMMAND:::
 REMOVE_PRIVATE
 ```kt
-// code here
+val options = StorageRemoveOptions.builder()
+    .accessLevel(StorageAccessLevel.PRIVATE)
+    .build()
+
+Amplify.Storage.remove("myUploadedFileName.txt",
+    options,
+    { Log.i("MyAmplifyApp", "Successfully removed: ${it.key}") },
+    { Log.e("MyAmplifyApp", "Remove failure", it) } )
 ```
