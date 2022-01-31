@@ -114,7 +114,6 @@ LIST_PRIVATE
 ```java
 StorageListOptions options = StorageListOptions.builder()
     .accessLevel(StorageAccessLevel.PRIVATE)
-    .targetIdentityId("otherUserID")
     .build();
 
 Amplify.Storage.list(
@@ -157,7 +156,6 @@ REMOVE_PRIVATE
 ```java
 StorageRemoveOptions options = StorageRemoveOptions.builder()
     .accessLevel(StorageAccessLevel.PRIVATE)
-    .targetIdentityId("otherUserID")
     .build();
 
 Amplify.Storage.remove(
