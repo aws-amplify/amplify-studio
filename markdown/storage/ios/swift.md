@@ -1,6 +1,9 @@
 :::NEW_COMMAND:::
 UPLOAD_PUBLIC
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 let dataString = "My Data"
 let data = dataString.data(using: .utf8)!
 let storageOperation = Amplify.Storage.uploadData(
@@ -21,6 +24,9 @@ let storageOperation = Amplify.Storage.uploadData(
 :::NEW_COMMAND:::
 UPLOAD_PROTECTED
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 let dataString = "My Data"
 let data = dataString.data(using: .utf8)!
 let options = StorageUploadDataRequest.Options(accessLevel: .protected)
@@ -43,6 +49,9 @@ let storageOperation = Amplify.Storage.uploadData(
 :::NEW_COMMAND:::
 UPLOAD_PRIVATE
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 let dataString = "My Data"
 let data = dataString.data(using: .utf8)!
 let options = StorageUploadDataRequest.Options(accessLevel: .private)
@@ -65,6 +74,9 @@ let storageOperation = Amplify.Storage.uploadData(
 :::NEW_COMMAND:::
 DOWNLOAD_PUBLIC
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 let storageOperation = Amplify.Storage.downloadData(
     key: "myKey", 
     progressListener: { progress in
@@ -81,6 +93,9 @@ let storageOperation = Amplify.Storage.downloadData(
 :::NEW_COMMAND:::
 DOWNLOAD_PROTECTED
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 let options = StorageDownloadDataRequest.Options(accessLevel: .protected)
 let storageOperation = Amplify.Storage.downloadData(
     key: "myKey",
@@ -99,6 +114,9 @@ let storageOperation = Amplify.Storage.downloadData(
 :::NEW_COMMAND:::
 DOWNLOAD_PRIVATE
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 let options = StorageDownloadDataRequest.Options(accessLevel: .private)
 let storageOperation = Amplify.Storage.downloadData(
     key: "myKey",
@@ -117,6 +135,9 @@ let storageOperation = Amplify.Storage.downloadData(
 :::NEW_COMMAND:::
 LIST_PUBLIC
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 Amplify.Storage.list { event in
     switch event {
     case let .success(listResult):
@@ -132,6 +153,9 @@ Amplify.Storage.list { event in
 :::NEW_COMMAND:::
 LIST_PROTECTED
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 let options = StorageListRequest.Options(accessLevel: .protected)
 Amplify.Storage.list(options: options) { event in
     switch event {
@@ -148,6 +172,9 @@ Amplify.Storage.list(options: options) { event in
 :::NEW_COMMAND:::
 LIST_PRIVATE
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 let options = StorageListRequest.Options(accessLevel: .private)
 Amplify.Storage.list(options: options) { event in
     switch event {
@@ -164,6 +191,9 @@ Amplify.Storage.list(options: options) { event in
 :::NEW_COMMAND:::
 REMOVE_PUBLIC
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 Amplify.Storage.remove(key: "myKey") { event in
     switch event {
     case let .success(data):
@@ -176,6 +206,9 @@ Amplify.Storage.remove(key: "myKey") { event in
 :::NEW_COMMAND:::
 REMOVE_PROTECTED
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 let options = StorageRemoveRequest.Options(accessLevel: .protected)
 Amplify.Storage.remove(key: "myKey", options: options) { event in
     switch event {
@@ -189,6 +222,9 @@ Amplify.Storage.remove(key: "myKey", options: options) { event in
 :::NEW_COMMAND:::
 REMOVE_PRIVATE
 ```swift
+import Amplify
+import AWSS3StoragePlugin
+
 let options = StorageRemoveRequest.Options(accessLevel: .private)
 Amplify.Storage.remove(key: "myKey", options: options) { event in
     switch event {

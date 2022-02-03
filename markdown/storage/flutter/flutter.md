@@ -1,6 +1,9 @@
 :::NEW_COMMAND:::
 UPLOAD_PUBLIC
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> createAndUploadFilePublic() async {
   // Create a dummy file
   final exampleString = 'Example file contents';
@@ -26,6 +29,9 @@ Future<void> createAndUploadFilePublic() async {
 :::NEW_COMMAND:::
 UPLOAD_PROTECTED
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> createAndUploadFileProtected() async {
   // Create a dummy file
   final exampleString = 'Example file contents';
@@ -51,6 +57,9 @@ Future<void> createAndUploadFileProtected() async {
 :::NEW_COMMAND:::
 UPLOAD_PRIVATE
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> createAndUploadFilePrivate() async {
   // Create a dummy file
   final exampleString = 'Example file contents';
@@ -76,6 +85,9 @@ Future<void> createAndUploadFilePrivate() async {
 :::NEW_COMMAND:::
 DOWNLOAD_PUBLIC
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> downloadFilePublic() async {
   final documentsDir = await getApplicationDocumentsDirectory();
   final filepath = documentsDir.path + '/example.txt';
@@ -96,6 +108,9 @@ Future<void> downloadFilePublic() async {
 :::NEW_COMMAND:::
 DOWNLOAD_PROTECTED
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> downloadFileProtected() async {
   final documentsDir = await getApplicationDocumentsDirectory();
   final filepath = documentsDir.path + '/example.txt';
@@ -120,6 +135,9 @@ Future<void> downloadFileProtected() async {
 :::NEW_COMMAND:::
 DOWNLOAD_PRIVATE
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> downloadFilePrivate() async {
   final documentsDir = await getApplicationDocumentsDirectory();
   final filepath = documentsDir.path + '/example.txt';
@@ -144,6 +162,9 @@ Future<void> downloadFilePrivate() async {
 :::NEW_COMMAND:::
 LIST_PUBLIC
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> listItemsPublic() async {
   try {
     final ListResult result = await Amplify.Storage.list();
@@ -158,6 +179,9 @@ Future<void> listItemsPublic() async {
 :::NEW_COMMAND:::
 LIST_PROTECTED
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> listItemsProtected() async {
   try {
     final ListResult result = await Amplify.Storage.list(
@@ -177,6 +201,9 @@ Future<void> listItemsProtected() async {
 :::NEW_COMMAND:::
 LIST_PRIVATE
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> listItemsPrivate() async {
   try {
     final ListResult result = await Amplify.Storage.list(
@@ -196,6 +223,9 @@ Future<void> listItemsPrivate() async {
 :::NEW_COMMAND:::
 REMOVE_PUBLIC
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> deleteFilePublic() async {
   try {
     final RemoveResult result =
@@ -209,6 +239,9 @@ Future<void> deleteFilePublic() async {
 :::NEW_COMMAND:::
 REMOVE_PROTECTED
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> deleteFileProtected() async {
   try {
     final RemoveResult result = await Amplify.Storage.remove(
@@ -226,6 +259,9 @@ Future<void> deleteFileProtected() async {
 :::NEW_COMMAND:::
 REMOVE_PRIVATE
 ```dart
+import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+
 Future<void> deleteFilePrivate() async {
   try {
     final RemoveResult result = await Amplify.Storage.remove(
