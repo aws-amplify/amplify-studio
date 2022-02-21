@@ -50,7 +50,7 @@ android {
 5. Go to **main.dart** and add the following lines to initialize the Amplify Libraries:
 ```dart
 // Amplify Flutter Packages
-import 'package:amplify_flutter/amplify.dart';
+import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:amplify_datastore/amplify_datastore.dart';
 // import 'package:amplify_api/amplify_api.dart'; // UNCOMMENT this line after backend is deployed
 
