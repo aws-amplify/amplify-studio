@@ -8,9 +8,9 @@ dependencies:
     sdk: flutter
 ```
 ```yaml
-  amplify_flutter: ^0.2.0
-  amplify_datastore: ^0.2.0
-  # amplify_api: ^0.2.0 // UNCOMMENT this line after backend is deployed
+  amplify_flutter: ^0.4.0
+  amplify_datastore: ^0.4.0
+  # amplify_api: ^0.4.0 // UNCOMMENT this line after backend is deployed
 ```
 
 2. Click **Pub Get** in the "Flutter commands" bar to install Amplify Libraries
@@ -50,7 +50,7 @@ android {
 5. Go to **main.dart** and add the following lines to initialize the Amplify Libraries:
 ```dart
 // Amplify Flutter Packages
-import 'package:amplify_flutter/amplify.dart';
+import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:amplify_datastore/amplify_datastore.dart';
 // import 'package:amplify_api/amplify_api.dart'; // UNCOMMENT this line after backend is deployed
 
