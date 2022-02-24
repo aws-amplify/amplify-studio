@@ -1,5 +1,5 @@
 
-Install the Amplify CLI. The Amplify CLI is a command line toolchain that runs locally that communicates with your app backend.
+Install the Amplify CLI. The Amplify CLI is a command line toolchain that runs locally in order to communicate with your app backend.
 ```
 :::AMPLIFY_INSTALL_COMMAND:::
 ```
