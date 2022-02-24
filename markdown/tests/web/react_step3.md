@@ -1,3 +1,8 @@
+Open your terminal and create a new React project:
+```bash
+npx create-react-app react-amplified
+cd react-amplified
+```
 
 Install the Amplify CLI. The Amplify CLI is a command line toolchain that runs locally that communicates with your app backend.
 ```
