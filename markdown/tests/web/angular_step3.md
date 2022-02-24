@@ -1,4 +1,4 @@
-Use the Angular CLI to create a new Angular project:
+Open an existing Angular project. If you do not have one, use the Angular CLI to create a new project:
 ```bash
 npx -p @angular/cli ng new myapp
 ```
@@ -14,7 +14,7 @@ npx -p @angular/cli ng new myapp
 cd myapp
 ```
 
-Install the Amplify CLI. The Amplify CLI is a command line toolchain that runs locally that communicates with your app backend.
+Install the Amplify CLI. The Amplify CLI is a command line toolchain that runs locally in order to communicate with your app backend.
 ```
 :::AMPLIFY_INSTALL_COMMAND:::
 ```
