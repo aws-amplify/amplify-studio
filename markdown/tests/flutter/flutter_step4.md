@@ -10,9 +10,9 @@ dependencies:
 ```
 
 ```yaml
-amplify_flutter: ^0.5.0
-amplify_datastore: ^0.5.0
-# amplify_api: ^0.5.0 // UNCOMMENT this line after backend is deployed
+amplify_flutter: ^0.6.0
+amplify_datastore: ^0.6.0
+# amplify_api: ^0.6.0 // UNCOMMENT this line after backend is deployed
 ```
 
 2. Click **Pub Get** in the "Flutter commands" bar to install Amplify Libraries
