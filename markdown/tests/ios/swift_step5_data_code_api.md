@@ -1,33 +1,19 @@
 :::NEW_COMMAND:::
 :::CREATE:::
 
-```js
-import Amplify
-import AWSPluginsCore
-```
-
-```js
-:::NO_COPY:::
-...
-```
-
-```js
-func update:::MODEL:::() {
-    // Retrieve your :::MODEL::: using Amplify.API.query
-    var model = :::MODEL:::(name: "my first :::MODEL:::", description: ":::MODEL::: description")
-    model.description = "updated description"
-    Amplify.API.mutate(request: .create(model)) { event in
-        switch event {
-        case .success(let result):
-            switch result {
-            case .success(let model):
-                print("Successfully created :::MODEL:::: \(model)")
-            case .failure(let error):
-                print("Got failed result with \(error.errorDescription)")
-            }
+```swift
+var model = :::MODEL:::(:::FIELDS:::)
+Amplify.API.mutate(request: .create(model)) { event in
+    switch event {
+    case .success(let result):
+        switch result {
+        case .success(let model):
+            print("Successfully created :::MODEL:::: \(model)")
         case .failure(let error):
-            print("Got failed event with error \(error)")
+            print("Got failed result with \(error.errorDescription)")
         }
+    case .failure(let error):
+        print("Got failed event with error \(error)")
     }
 }
 ```
@@ -35,33 +21,19 @@ func update:::MODEL:::() {
 :::NEW_COMMAND:::
 :::UPDATE:::
 
-```js
-import Amplify
-import AWSPluginsCore
-```
-
-```js
-:::NO_COPY:::
-...
-```
-
-```js
-func update:::MODEL:::() {
-    // Retrieve your :::MODEL::: using Amplify.API.query
-    var model = :::MODEL:::(name: "my first :::MODEL:::", description: ":::MODEL::: description")
-    model.description = "updated description"
-    Amplify.API.mutate(request: .update(model)) { event in
-        switch event {
-        case .success(let result):
-            switch result {
-            case .success(let model):
-                print("Successfully created :::MODEL:::: \(model)")
-            case .failure(let error):
-                print("Got failed result with \(error.errorDescription)")
-            }
+```swift
+// Retrieve your :::MODEL::: using Amplify.API.query
+Amplify.API.mutate(request: .update(updatedModel)) { event in
+    switch event {
+    case .success(let result):
+        switch result {
+        case .success(let model):
+            print("Successfully updated :::MODEL:::: \(model)")
         case .failure(let error):
-            print("Got failed event with error \(error)")
+            print("Got failed result with \(error.errorDescription)")
         }
+    case .failure(let error):
+        print("Got failed event with error \(error)")
     }
 }
 ```
@@ -69,33 +41,19 @@ func update:::MODEL:::() {
 :::NEW_COMMAND:::
 :::DELETE:::
 
-```js
-import Amplify
-import AWSPluginsCore
-```
-
-```js
-:::NO_COPY:::
-...
-```
-
-```js
-func update:::MODEL:::() {
-    // Retrieve your :::MODEL::: using Amplify.API.query
-    var model = :::MODEL:::(name: "my first :::MODEL:::", description: ":::MODEL::: description")
-    model.description = "updated description"
-    Amplify.API.mutate(request: .delete(model)) { event in
-        switch event {
-        case .success(let result):
-            switch result {
-            case .success(let model):
-                print("Successfully created :::MODEL:::: \(model)")
-            case .failure(let error):
-                print("Got failed result with \(error.errorDescription)")
-            }
+```swift
+// Retrieve your :::MODEL::: using Amplify.API.query
+Amplify.API.mutate(request: .delete(modelToBeDeleted)) { event in
+    switch event {
+    case .success(let result):
+        switch result {
+        case .success(let model):
+            print("Successfully deleted :::MODEL:::: \(model)")
         case .failure(let error):
-            print("Got failed event with error \(error)")
+            print("Got failed result with \(error.errorDescription)")
         }
+    case .failure(let error):
+        print("Got failed event with error \(error)")
     }
 }
 ```
@@ -103,19 +61,9 @@ func update:::MODEL:::() {
 :::NEW_COMMAND:::
 :::QUERY:::
 
-```js
-import Amplify
-import AWSPluginsCore
-```
-
-```js
-:::NO_COPY:::
-...
-```
-
-```js
+```swift
 func get:::MODEL:::() {
-    Amplify.API.query(request: .get(:::MODEL:::.self, byId: "ENTER MODEL ID HERE")) { event in
+    Amplify.API.query(request: .get(:::MODEL:::.self, byId: "YOUR_RECORD_ID")) { event in
         switch event {
         case .success(let result):
             switch result {
