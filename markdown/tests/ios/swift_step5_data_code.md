@@ -1,53 +1,51 @@
 :::NEW_COMMAND:::
 :::CREATE:::
 ```swift
-let item = :::MODEL:::(:::FIELDS:::)
-Amplify.DataStore.save(item) { result in
-    switch(result) {
-    case .success(let savedItem):
-        print("Saved item: \(savedItem.id)")
-    case .failure(let error):
-        print("Could not save item to DataStore: \(error)")
-    }    
+do {
+    let item = :::MODEL:::(:::FIELDS:::)
+    let savedItem = try await Amplify.DataStore.save(item)
+    print("Saved item: \(savedItem)")
+} catch let error as DataStoreError {
+    print("Error creating item: \(error)")
+} catch {
+    print("Unexpected error: \(error)")
 }
 ```
 :::NEW_COMMAND:::
 :::UPDATE:::
 ```swift
-Amplify.DataStore.save(updatedItem) { result in
-    switch(result) {
-    case .success(let savedItem):
-        print("Saved item: \(savedItem.id)")
-    case .failure(let error):
-        print("Could not save item to DataStore: \(error)")
-    }    
+do {
+    let updatedItem = try await Amplify.DataStore.save(item)
+    print("Updated item: \(updatedItem)")
+} catch let error as DataStoreError {
+    print("Error updating item: \(error)")
+} catch {
+    print("Unexpected error: \(error)")
 }
 ```
 :::NEW_COMMAND:::
 :::DELETE:::
 ```swift
-Amplify.DataStore.delete(toDeleteItem) { result in
-    switch(result) {
-    case .success:
-        print("Deleted item: \(toDeleteItem.id)")
-    case .failure(let error):
-        print("Could not update data in Datastore: \(error)")
-    }
+do {
+    try await Amplify.DataStore.delete(itemToDelete)
+    print("Deleted item: \(itemToDelete.identifier)")
+} catch let error as DataStoreError {
+    print("Error deleting item: \(error)")
+} catch {
+    print("Unexpected error: \(error)")
 }
-
 ```
 :::NEW_COMMAND:::
 :::QUERY:::
 ```swift
-Amplify.DataStore.query(:::MODEL:::.self) { result in
-    switch(result) {
-    case .success(let items):
-        for item in items {
-            print(":::MODEL::: ID: \(item.id)")
-        }
-    case .failure(let error):
-        print("Could not query DataStore: \(error)")
+do {
+    let items = try await Amplify.DataStore.query(:::Model:::.self)
+    for item in items {
+        print(":::MODEL::: ID: \(item.id)")
     }
+} catch let error as DataStoreError {
+    print("Error querying items: \(error)")
+} catch {
+    print("Unexpected error: \(error)")
 }
-
 ```

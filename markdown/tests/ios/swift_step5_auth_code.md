@@ -1,38 +1,42 @@
 :::NEW_COMMAND:::
 :::GET_AUTH_SESSION:::
 ```swift
-_ = Amplify.Auth.fetchAuthSession { result in
-    switch result {
-    case .success(let session):
-        print("Is user signed in - \(session.isSignedIn)")
-    case .failure(let error):
-        print("Fetch session failed with error \(error)")
-    }
+do {
+    let session = try await Amplify.Auth.fetchAuthSession()
+    print("Is user signed in: \(session.isSignedIn)")
+} catch let error as AuthError {
+    print("Fetch auth session failed with error: \(error)")
+} catch {
+    print("Unexpected error: \(error)")
 }
 ```
 
 :::NEW_COMMAND:::
 :::SIGNIN:::
 ```swift
-Amplify.Auth.signIn(username: username, password: password) { result in
-    switch result {
-    case .success:
-        print("Sign in succeeded")
-    case .failure(let error):
-        print("Sign in failed \(error)")
-    }
+do {
+    let result = try await Amplify.Auth.signIn(
+        username: username,
+        password: password
+    )
+    print("Sign in successful: \(result.isSignedIn)")
+} catch let error as AuthError {
+    print("Sign in failed with error: \(error)")
+} catch {
+    print("Unexpected error: \(error)")
 }
 ```
 :::NEW_COMMAND:::
 :::SIGNOUT:::
 ```swift
-Amplify.Auth.signOut() { result in
-    switch result {
-    case .success:
-        print("Successfully signed out")
-    case .failure(let error):
-        print("Sign out failed with error \(error)")
-    }
+let result = await Amplify.Auth.signOut()
+guard let signOutResult = result as? AWSCognitoSignOutResult,
+        case .complete = signOutResult
+else {
+    print("Sign out failed to complete")
+    return
+}
+print("Sign out successful")
 }
 ```
 :::NEW_COMMAND:::
@@ -40,16 +44,20 @@ Amplify.Auth.signOut() { result in
 ```swift
 let userAttributes = [AuthUserAttribute(.email, value: email)]
 let options = AuthSignUpRequest.Options(userAttributes: userAttributes)
-Amplify.Auth.signUp(username: username, password: password, options: options) { result in
-    switch result {
-    case .success(let signUpResult):
-        if case let .confirmUser(deliveryDetails, _) = signUpResult.nextStep {
-            print("Delivery details \(String(describing: deliveryDetails))")
-        } else {
-            print("SignUp Complete")
-        }
-    case .failure(let error):
-        print("An error occurred while registering a user \(error)")
+do {
+    let signUpResult = try await Amplify.Auth.signUp(
+        username: username,
+        password: password,
+        options: options
+    )
+    if case let .confirmUser(deliveryDetails, _, userId) = signUpResult.nextStep {
+        print("Delivery details \(String(describing: deliveryDetails)) for userId: \(String(describing: userId)))")
+    } else {
+        print("SignUp Complete")
     }
+} catch let error as AuthError {
+    print("An error occurred while registering a user \(error)")
+} catch {
+    print("Unexpected error: \(error)")
 }
 ```
