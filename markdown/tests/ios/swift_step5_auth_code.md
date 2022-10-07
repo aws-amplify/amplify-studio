@@ -30,13 +30,23 @@ do {
 :::SIGNOUT:::
 ```swift
 let result = await Amplify.Auth.signOut()
-guard let signOutResult = result as? AWSCognitoSignOutResult,
-        case .complete = signOutResult
-else {
-    print("Sign out failed to complete")
-    return
-}
-print("Sign out successful")
+if let signOutResult = result as? AWSCognitoSignOutResult {
+    print("Local signout successful: \(signOutResult.signedOutLocally)")
+    switch signOutResult {
+    case .complete:
+        print("SignOut completed")
+    case .failed(let error):
+        print("SignOut failed with \(error)")
+    case let .partial(revokeTokenError, globalSignOutError, hostedUIError):
+        print(
+        """
+        SignOut is partial.
+        RevokeTokenError: \(String(describing: revokeTokenError))
+        GlobalSignOutError: \(String(describing: globalSignOutError))
+        HostedUIError: \(String(describing: hostedUIError))
+        """
+        )
+    }
 }
 ```
 :::NEW_COMMAND:::
