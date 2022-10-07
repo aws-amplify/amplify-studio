@@ -140,8 +140,8 @@ let post = Post(body: "How to build deploy a web app on AWS Amplify")
 let tag = Tag(label: "static-web-hosting")
 
 do { 
-    let savedPost = try await Amplify.DataStore.save(post)
-    let savedTag = try await Amplify.DataStore.save(tag)
+    _ = try await Amplify.DataStore.save(post)
+    _ = try await Amplify.DataStore.save(tag)
     let savedPostTag = try await Amplify.DataStore.save(PostTag(post: post, tag: tag))
     print("Saved PostTag: \(savedPostTag)")
 } catch let error as DataStoreError { 
