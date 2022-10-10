@@ -24,7 +24,7 @@ func update:::MODEL:::() async {
         case .failure(let graphQLError):
             print("Failed to create graphql \(graphQLError)")
         }
-    } catch let error as API Error {
+    } catch let error as APIError {
         print("Failed to create :::MODEL::: - \(error)")
     } catch {
         print("Unexpected error: \(error)")
@@ -58,7 +58,7 @@ func update:::MODEL:::() async {
         case .failure(let error):
             print("Got failed result with \(error.errorDescription)")
         }
-    } catch let error as API Error {
+    } catch let error as APIError {
         print("Failed to update :::MODEL::: - \(error)")
     } catch {
         print("Unexpected error: \(error)")
@@ -92,7 +92,7 @@ func update:::MODEL:::() async {
         case .failure(let error):
             print("Got failed result with \(error.errorDescription)")
         }
-    } catch let error as API Error {
+    } catch let error as APIError {
         print("Failed to delete :::MODEL::: - \(error)")
     } catch {
         print("Unexpected error: \(error)")
@@ -130,7 +130,7 @@ func get:::MODEL:::() async {
         case .failure(let error):
             print("Got failed result with \(error)")
         }
-    } catch let error as API Error {
+    } catch let error as APIError {
         print("Failed to query :::MODEL::: - \(error)")
     } catch {
         print("Unexpected error: \(error)")
