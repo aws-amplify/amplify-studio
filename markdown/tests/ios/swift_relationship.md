@@ -45,8 +45,8 @@ In one-to-one relationships, you'll need to manually remove both the source mode
 
 ```swift
 do { 
-    try await Amplify.DataStore.delete(post.author)
     try await Amplify.DataStore.delete(post)
+    try await Amplify.DataStore.delete(post.author)
     print("Everything is deleted")
 } catch let error as DataStoreError {
     print("An error occurred in a preceding operation: \(error)")
