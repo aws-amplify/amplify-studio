@@ -39,7 +39,7 @@ do {
 :::QUERY:::
 ```swift
 do {
-    let items = try await Amplify.DataStore.query(:::Model:::.self)
+    let items = try await Amplify.DataStore.query(:::MODEL:::.self)
     for item in items {
         print(":::MODEL::: ID: \(item.id)")
     }
