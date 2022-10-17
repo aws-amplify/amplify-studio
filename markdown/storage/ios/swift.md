@@ -2,236 +2,259 @@
 UPLOAD_PUBLIC
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-let dataString = "My Data"
-let data = dataString.data(using: .utf8)!
-let storageOperation = Amplify.Storage.uploadData(
-    key: "ExampleKey",
-    data: data,
-    progressListener: { progress in
-        print("Progress: \(progress)")
-    }, resultListener: { event in
-        switch event {
-        case .success(let data):
-            print("Completed: \(data)")
-        case .failure(let storageError):
-            print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+do {
+    let dataString = "MyData"
+    let data = Data(dataString.utf8)
+    let uploadTask = try await Amplify.Storage.uploadData(
+        key: "ExampleKey",
+        data: data
+    )
+    
+    Task {
+        for await progress in await uploadTask.progress {
+            print("Progress: \(progress)")
         }
     }
-)
+    
+    let value = try await uploadTask.value
+    print("Completed: \(value)")
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
+}
 ```
 :::NEW_COMMAND:::
 UPLOAD_PROTECTED
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-let dataString = "My Data"
-let data = dataString.data(using: .utf8)!
-let options = StorageUploadDataRequest.Options(accessLevel: .protected)
-let storageOperation = Amplify.Storage.uploadData(
-    key: "ExampleKey",
-    data: data,
-    options: options,
-    progressListener: { progress in
-        print("Progress: \(progress)")
-    }, resultListener: { event in
-        switch event {
-        case .success(let data):
-            print("Completed: \(data)")
-        case .failure(let storageError):
-            print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+do {
+    let dataString = "MyData"
+    let data = Data(dataString.utf8)
+    let options = StorageUploadDataRequest.Options(accessLevel: .protected)
+    let uploadTask = try await Amplify.Storage.uploadData(
+        key: "ExampleKey",
+        data: data,
+        options: options
+    )
+    
+    Task {
+        for await progress in await uploadTask.progress {
+            print("Progress: \(progress)")
         }
     }
-)
+    
+    let value = try await uploadTask.value
+    print("Completed: \(value)")
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
+}
 ```
 :::NEW_COMMAND:::
 UPLOAD_PRIVATE
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-let dataString = "My Data"
-let data = dataString.data(using: .utf8)!
-let options = StorageUploadDataRequest.Options(accessLevel: .private)
-let storageOperation = Amplify.Storage.uploadData(
-    key: "ExampleKey",
-    data: data,
-    options: options,
-    progressListener: { progress in
-        print("Progress: \(progress)")
-    }, resultListener: { event in
-        switch event {
-        case .success(let data):
-            print("Completed: \(data)")
-        case .failure(let storageError):
-            print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+do {
+    let dataString = "MyData"
+    let data = Data(dataString.utf8)
+    let options = StorageUploadDataRequest.Options(accessLevel: .private)
+    let uploadTask = try await Amplify.Storage.uploadData(
+        key: "ExampleKey",
+        data: data,
+        options: options
+    )
+
+    Task {
+        for await progress in await uploadTask.progress {
+            print("Progress: \(progress)")
         }
     }
-)
+
+    let value = try await uploadTask.value
+    print("Completed: \(value)")
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
+}
 ```
 :::NEW_COMMAND:::
 DOWNLOAD_PUBLIC
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-let storageOperation = Amplify.Storage.downloadData(
-    key: "myKey", 
-    progressListener: { progress in
-        print("Progress: \(progress)")
-    }, resultListener: { (event) in
-        switch event {
-        case let .success(data):
-            print("Completed: \(data)")
-        case let .failure(storageError):
-            print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+do {
+    let downloadTask = try await Amplify.Storage.downloadData(
+        key: "ExampleKey"
+    )
+
+    Task {
+        for await progress in await downloadTask.progress {
+            print("Progress: \(progress)")
+        }
     }
-})
+
+    let value = try await downloadTask.value
+    print("Completed: \(value)")
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
+}
 ```
 :::NEW_COMMAND:::
 DOWNLOAD_PROTECTED
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-let options = StorageDownloadDataRequest.Options(accessLevel: .protected)
-let storageOperation = Amplify.Storage.downloadData(
-    key: "myKey",
-    options: options,
-    progressListener: { progress in
-        print("Progress: \(progress)")
-    }, resultListener: { (event) in
-        switch event {
-        case let .success(data):
-            print("Completed: \(data)")
-        case let .failure(storageError):
-            print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+do {
+    let dataString = "MyData"
+    let data = Data(dataString.utf8)
+    let options = StorageDownloadDataRequest.Options(accessLevel: .protected)
+    let downloadTask = try await Amplify.Storage.downloadData(
+        key: "ExampleKey",
+        options: options
+    )
+
+    Task {
+        for await progress in await downloadTask.progress {
+            print("Progress: \(progress)")
+        }
     }
-})
+
+    let value = try await downloadTask.value
+    print("Completed: \(value)")
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
+}
 ```
 :::NEW_COMMAND:::
 DOWNLOAD_PRIVATE
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-let options = StorageDownloadDataRequest.Options(accessLevel: .private)
-let storageOperation = Amplify.Storage.downloadData(
-    key: "myKey",
-    options: options,
-    progressListener: { progress in
-        print("Progress: \(progress)")
-    }, resultListener: { (event) in
-        switch event {
-        case let .success(data):
-            print("Completed: \(data)")
-        case let .failure(storageError):
-            print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+do {
+    let options = StorageDownloadDataRequest.Options(accessLevel: .private)
+    let downloadTask = try await Amplify.Storage.downloadData(
+        key: "ExampleKey",
+        options: options
+    )
+
+    Task {
+        for await progress in await downloadTask.progress {
+            print("Progress: \(progress)")
+        }
     }
-})
+
+    let value = try await downloadTask.value
+    print("Completed: \(value)")
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
+}
 ```
 :::NEW_COMMAND:::
 LIST_PUBLIC
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-Amplify.Storage.list { event in
-    switch event {
-    case let .success(listResult):
-        print("Completed")
-        listResult.items.forEach { item in
-            print("Key: \(item.key)")
-        }
-    case let .failure(storageError):
-        print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+do {
+    let listResult = try await Amplify.Storage.list()
+    print("Completed")
+    listResult.items.forEach { item in
+        print("Key: \(item.key)")
     }
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
 }
 ```
 :::NEW_COMMAND:::
 LIST_PROTECTED
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-let options = StorageListRequest.Options(accessLevel: .protected)
-Amplify.Storage.list(options: options) { event in
-    switch event {
-    case let .success(listResult):
-        print("Completed")
-        listResult.items.forEach { item in
-            print("Key: \(item.key)")
-        }
-    case let .failure(storageError):
-        print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+do {
+    let options = StorageListRequest.Options(accessLevel: .protected)
+    let listResult = try await Amplify.Storage.list(options: options)
+    print("Completed")
+    listResult.items.forEach { item in
+        print("Key: \(item.key)")
     }
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
 }
 ```
 :::NEW_COMMAND:::
 LIST_PRIVATE
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-let options = StorageListRequest.Options(accessLevel: .private)
-Amplify.Storage.list(options: options) { event in
-    switch event {
-    case let .success(listResult):
-        print("Completed")
-        listResult.items.forEach { item in
-            print("Key: \(item.key)")
-        }
-    case let .failure(storageError):
-        print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+do {
+    let options = StorageListRequest.Options(accessLevel: .private)
+    let listResult = try await Amplify.Storage.list(options: options)
+    print("Completed")
+    listResult.items.forEach { item in
+        print("Key: \(item.key)")
     }
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
 }
 ```
 :::NEW_COMMAND:::
 REMOVE_PUBLIC
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-Amplify.Storage.remove(key: "myKey") { event in
-    switch event {
-    case let .success(data):
-        print("Completed: Deleted \(data)")
-    case let .failure(storageError):
-        print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
-    }
+do {
+    let removedKey = try await Amplify.Storage.remove(key: "ExampleKey")
+    print("Deleted \(removedKey)")
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
 }
 ```
 :::NEW_COMMAND:::
 REMOVE_PROTECTED
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-let options = StorageRemoveRequest.Options(accessLevel: .protected)
-Amplify.Storage.remove(key: "myKey", options: options) { event in
-    switch event {
-    case let .success(data):
-        print("Completed: Deleted \(data)")
-    case let .failure(storageError):
-        print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
-    }
+do {
+    let options = StorageRemoveRequest.Options(accessLevel: .protected)
+    let removedKey = try await Amplify.Storage.remove(key: "ExampleKey")
+    print("Deleted \(removedKey)")
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
 }
 ```
 :::NEW_COMMAND:::
 REMOVE_PRIVATE
 ```swift
 import Amplify
-import AWSS3StoragePlugin
 
-let options = StorageRemoveRequest.Options(accessLevel: .private)
-Amplify.Storage.remove(key: "myKey", options: options) { event in
-    switch event {
-    case let .success(data):
-        print("Completed: Deleted \(data)")
-    case let .failure(storageError):
-        print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
-    }
+do {
+    let options = StorageRemoveRequest.Options(accessLevel: .private)
+    let removedKey = try await Amplify.Storage.remove(key: "ExampleKey")
+    print("Deleted \(removedKey)")
+} catch let error as StorageError {
+    print("Failed: \(error.errorDescription). \(error.recoverySuggestion)")
+} catch {
+    print("Unexpected error: \(error)")
 }
 ```
