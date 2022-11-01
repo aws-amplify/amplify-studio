@@ -1,34 +1,34 @@
 :::NEW_COMMAND:::
 :::ONE_TO_ONE:::
 
-Example: **One post** (source model) has **one author** (target model).
+Example: **One country** (source model) has **one capital** (target model).
 
 **Create**
 
 In order to save a 1:1 relationship, create the target model instance first and then save it to the source model instance.
 
 ```js
-const newAuthor = await DataStore.save(new Author({
-  name: "Rene Brandel"
+const newCapital = await DataStore.save(new Capital({
+  name: "Washington D.C."
+  population: 712000
 }))
 
-const post = await DataStore.save(
-  new Post({
-    title: "My first post!",
-    content: "Lorem ipsum ",
-    author: newAuthor
+const country = await DataStore.save(
+  new Country({
+    name: "United States of America",
+    capital: newCapital
   })
 );
 ```
-Here we've first created a new `Author` instance and then saved it to the `Post`'s "author" relationship field.
+Here we've first created a new `Capital` instance and then saved it to the `Country`'s "capital" relationship field.
 
 **Query**
 
 To query one-to-one relationships, access the target model instance through its source model instance's field.
 
 ```js
-const post = await DataStore.query(Post, "YOUR_POST_ID")
-const author = post.author
+const country = await DataStore.query(Country, "YOUR_COUNTRY_ID")
+const author = await country.capital
 ```
 
 **Delete**
@@ -36,11 +36,11 @@ const author = post.author
 In one-to-one relationships, if the target model instance is deleted, it will also clear the source model instance's relationship field.
 
 ```js
-const post = await DataStore.query(Post, "YOUR_POST_ID")
-await DataStore.delete(post.author)
+const country = await DataStore.query(Country, "YOUR_COUNTRY_ID")
+await DataStore.delete(await country.capital)
 ```
 
-In this example, the `Post`'s "author" field will be cleared and the `Author` model instance will be deleted.
+In this example, the `Country`'s "capital" field will be cleared and the `Capital` model instance will be deleted.
 
 :::NEW_COMMAND:::
 :::ONE_TO_MANY:::
@@ -68,8 +68,15 @@ Here we've first created a new `Publication` instance and then saved its _id_ to
 To query one-to-many relationships, filter based on the source model instance's id on the target model.
 
 ```js
-const articles = (await DataStore.query(Article))                    
-                    .filter(a => a.publicationID === "YOUR_PUBLICATION_ID");
+const publication = await DataStore.query(Publication, "YOUR_PUBLICATION_ID")
+
+// Option 1: use the toArray() function to lazy load related articles
+const articles = await publication.articles.toArray()
+
+// Option 2: use async iterators to lazy load related articles
+for await (const article of publication.articles) {
+  console.log(article)
+}
 ```
 
 **Delete**
@@ -115,12 +122,11 @@ Here we've first created a new `Post` instance and a new `Tag` instance. Then, s
 To query many-to-many relationships, filter the join model based on one of the model's _id_.
 
 ```js
-const tags = (await DataStore.query(PostTag))                
-                .filter(pt => pt.post.id === "YOUR_POST_ID")
-                .map(pt => pt.tag)
+const postTags = await post.postTags.toArray() ?? []
+const tags = await Promise.all(postTags.map(pt => pt.tag))
 ```
 
-In this example, first filter the _join model_ `PostTag` with your `Post`'s _id, then map the `PostTag`s to `Tag`s.
+In this example, first get the model instances from the _join model_ `PostTag` with your `Post`, then map the `PostTag`s to `Tag`s.
 
 **Delete**
 
