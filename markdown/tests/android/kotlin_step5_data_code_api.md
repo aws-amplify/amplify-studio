@@ -3,7 +3,7 @@
 
 ```kt
 val model = :::MODEL:::.builder()
-    .name("My :::MODEL:::")
+    :::FIELDS:::
     .build()
 
 Amplify.API.mutate(ModelMutation.create(model),
@@ -16,13 +16,9 @@ Amplify.API.mutate(ModelMutation.create(model),
 :::UPDATE:::
 
 ```kt
-val model = :::MODEL:::.builder()
-    .name("My :::MODEL:::")
-    .build()
-
-Amplify.API.mutate(ModelMutation.update(model),
+Amplify.API.mutate(ModelMutation.update(updatedModel),
     { Log.i("MyAmplifyApp", ":::MODEL::: with id: ${it.data.id}") }
-    { Log.e("MyAmplifyApp", "Create failed", it) }
+    { Log.e("MyAmplifyApp", "Update failed", it) }
 )
 ```
 
@@ -30,13 +26,9 @@ Amplify.API.mutate(ModelMutation.update(model),
 :::DELETE:::
 
 ```kt
-val model = :::MODEL:::.builder()
-    .name("My :::MODEL:::")
-    .build()
-
-Amplify.API.mutate(ModelMutation.delete(model),
+Amplify.API.mutate(ModelMutation.delete(modelToBeDeleted),
     { Log.i("MyAmplifyApp", ":::MODEL::: with id: ${it.data.id}") }
-    { Log.e("MyAmplifyApp", "Create failed", it) }
+    { Log.e("MyAmplifyApp", "Deletion failed", it) }
 )
 ```
 
@@ -44,10 +36,8 @@ Amplify.API.mutate(ModelMutation.delete(model),
 :::QUERY:::
 
 ```kt
-private fun get:::MODEL:::(id: String) {
-    Amplify.API.query(ModelQuery.get(:::MODEL:::::class.java, id),
-        { Log.i("MyAmplifyApp", "Query results = ${(it.data as :::MODEL:::).name}") },
-        { Log.e("MyAmplifyApp", "Query failed", it) }
-    );
-}
+Amplify.API.query(ModelQuery.get(:::MODEL:::::class.java, "YOUR_RECORD_ID"),
+    { Log.i("MyAmplifyApp", "Query results = ${(it.data as :::MODEL:::).id}") },
+    { Log.e("MyAmplifyApp", "Query failed", it) }
+);
 ```

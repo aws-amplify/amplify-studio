@@ -12,10 +12,8 @@ import AWSPluginsCore
 ```
 
 ```swift
-func update:::MODEL:::() async {
-    // Retrieve your :::MODEL::: using Amplify.API.query
-    var model = :::MODEL:::(name: "my first :::MODEL:::", description: ":::MODEL::: description")
-    model.description = "updated description"
+func create:::MODEL:::() async {
+    var model = :::MODEL:::(:::FIELDS:::)
     do {
         let result = try await Amplify.API.mutate(request: .create(model))
         switch result {
@@ -46,12 +44,9 @@ import AWSPluginsCore
 ```
 
 ```swift
-func update:::MODEL:::() async {
-    // Retrieve your :::MODEL::: using Amplify.API.query
-    var model = :::MODEL:::(name: "my first :::MODEL:::", description: ":::MODEL::: description")
-    model.description = "updated description"
+func update:::MODEL:::(updatedModel: :::MODEL:::) async {
     do {
-        let result = try await Amplify.API.mutate(request: .update(model))
+        let result = try await Amplify.API.mutate(request: .update(updatedModel))
         switch result {
         case .success(let model):
             print("Successfully updated :::MODEL:::: \(model)")
@@ -80,12 +75,9 @@ import AWSPluginsCore
 ```
 
 ```swift
-func update:::MODEL:::() async {
-    // Retrieve your :::MODEL::: using Amplify.API.query
-    var model = :::MODEL:::(name: "my first :::MODEL:::", description: ":::MODEL::: description")
-    model.description = "updated description"
+func delete:::MODEL:::(toBeDeleted: :::MODEL:::) async {
     do {
-        let result = try await Amplify.API.mutate(request: .delete(model))
+        let result = try await Amplify.API.mutate(request: .delete(toBeDeleted))
         switch result {
         case .success(let model):
             print("Successfully deleted :::MODEL:::: \(model)")
@@ -104,6 +96,7 @@ func update:::MODEL:::() async {
 :::QUERY:::
 
 ```swift
+
 import Amplify
 import AWSPluginsCore
 ```

@@ -4,7 +4,7 @@
 ```dart
 Future<void> create:::MODEL:::() async {
   try {
-    final model = :::MODEL:::(name: 'my first :::MODEL:::', description: ':::MODEL::: description');
+    final model = :::MODEL:::(:::FIELDS:::);
     final request = ModelMutations.create(model);
     final response = await Amplify.API.mutate(request: request).response;
 
@@ -13,7 +13,7 @@ Future<void> create:::MODEL:::() async {
       safePrint('errors: ${response.errors}');
       return;
     }
-    safePrint('Mutation result: ${created:::MODEL:::.name}');
+    safePrint('Mutation result: ${created:::MODEL:::.id}');
   } on ApiException catch (e) {
     safePrint('Mutation failed: $e');
   }
@@ -25,9 +25,9 @@ Future<void> create:::MODEL:::() async {
 
 ```dart
 Future<void> update:::MODEL:::(:::MODEL::: original:::MODEL:::) async {
-  final modelWithNewName = original:::MODEL:::.copyWith(name: 'new name');
+  final updatedModel = original:::MODEL:::.copyWith(:::FIELDS:::);
 
-  final request = ModelMutations.update(modelWithNewName);
+  final request = ModelMutations.update(updatedModel);
   final response = await Amplify.API.mutate(request: request).response;
   print('Response: $response');
 }
@@ -45,7 +45,7 @@ Future<void> delete:::MODEL:::(:::MODEL::: modelToDelete) async {
 
 // or delete by ID, ideal if you do not have the instance in memory, yet
 Future<void> delete:::MODEL:::ById(:::MODEL::: modelToDelete) async {
-  final request = ModelMutations.deleteById(Todo.classType, 'ENTER ID HERE');
+  final request = ModelMutations.deleteById(:::MODEL:::.classType, 'ENTER ID HERE');
   final response = await Amplify.API.mutate(request: request).response;
   print('Response: $response');
 }
@@ -55,18 +55,21 @@ Future<void> delete:::MODEL:::ById(:::MODEL::: modelToDelete) async {
 :::QUERY:::
 
 ```dart
-Future<Todo?> queryItem(:::MODEL::: queried:::MODEL:::) async {
-   try {
-      final request = ModelQueries.get(Todo.classType, queried:::MODEL:::.id);
-      final response = await Amplify.API.query(request: request).response;
-      final model = response.data;
-      if (model == null) {
-        print('errors: ${response.errors}');
-      }
-      return model;
-   } on ApiException catch (e) {
-      print('Query failed: $e');
-      return null;
-   }
+Future<List<:::MODEL:::?>> queryListItems() async {
+  try {
+    final request = ModelQueries.list(:::MODEL:::.classType);
+    final response = await Amplify.API.query(request: request).response;
+
+    final items = response.data?.items;
+    if (items == null) {
+      print('errors: ${response.errors}');
+      return <:::MODEL:::?>[];
+    }
+    return items;
+  } on ApiException catch (e) {
+    print('Query failed: $e');
+  }
+  return <:::MODEL:::?>[];
 }
+
 ```

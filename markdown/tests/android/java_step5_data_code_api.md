@@ -3,7 +3,7 @@
 
 ```java
 :::MODEL::: model = :::MODEL:::.builder()
-    .name("My :::MODEL:::")
+    :::FIELDS:::
     .build();
 
 Amplify.API.mutate(ModelMutation.create(model),
@@ -16,13 +16,9 @@ Amplify.API.mutate(ModelMutation.create(model),
 :::UPDATE:::
 
 ```java
-:::MODEL::: model = :::MODEL:::.builder()
-    .name("My :::MODEL:::")
-    .build();
-
-Amplify.API.mutate(ModelMutation.update(model),
+Amplify.API.mutate(ModelMutation.update(updatedModel),
     response -> Log.i("MyAmplifyApp", ":::MODEL::: with id: " + response.getData().getId()),
-    error -> Log.e("MyAmplifyApp", "Create failed", error)
+    error -> Log.e("MyAmplifyApp", "Update failed", error)
 );
 ```
 
@@ -30,13 +26,9 @@ Amplify.API.mutate(ModelMutation.update(model),
 :::DELETE:::
 
 ```java
-:::MODEL::: model = :::MODEL:::.builder()
-    .name("My :::MODEL:::")
-    .build();
-
-Amplify.API.mutate(ModelMutation.delete(model),
+Amplify.API.mutate(ModelMutation.delete(modelToBeDeleted),
     response -> Log.i("MyAmplifyApp", ":::MODEL::: with id: " + response.getData().getId()),
-    error -> Log.e("MyAmplifyApp", "Create failed", error)
+    error -> Log.e("MyAmplifyApp", "Deletion failed", error)
 );
 ```
 
@@ -44,11 +36,9 @@ Amplify.API.mutate(ModelMutation.delete(model),
 :::QUERY:::
 
 ```java
-private void get:::MODEL:::(String id) {
-    Amplify.API.query(
-        ModelQuery.get(:::MODEL:::.class, id),
-        response -> Log.i("MyAmplifyApp", ((:::MODEL:::) response.getData()).getName()),
-        error -> Log.e("MyAmplifyApp", error.toString(), error)
-    );
-}
+Amplify.API.query(
+    ModelQuery.get(:::MODEL:::.class, "YOUR_RECORD_ID"),
+    response -> Log.i("MyAmplifyApp", ((:::MODEL:::) response.getData()).getId()),
+    error -> Log.e("MyAmplifyApp", error.toString(), error)
+);
 ```
