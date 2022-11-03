@@ -40,15 +40,25 @@ body:
         ```
         arn:aws:amplify:REGION:accountId:apps/<APP-ID>
         ```
+    validations:
+      required: true
   - type: input
     attributes:
       label: Region
       placeholder: e.g. us-east-1
+    validations:
+      required: true
 
   - type: input
     attributes:
-      label: Environment name
+      label: Environment name      
       description: If applicable. **Be sure to remove any sensitive data.**
+    validations:
+      required: true
+      
+  - type: input
+    attributes:
+      label: Figma File Version (if applicable)
 
   - type: markdown
     attributes:
@@ -90,6 +100,7 @@ body:
         **Be sure to remove any sensitive data.**
     validations:
       required: true
+      
   - type: textarea
     attributes:
       label: Expected behavior
@@ -97,6 +108,7 @@ body:
         A clear and concise description of what you expected to happen.
     validations:
       required: true
+      
   - type: textarea
     attributes:
       label: Reproduction steps
@@ -112,6 +124,13 @@ body:
         ...
     validations:
       required: true
+
+  - type: input
+    attributes:
+      label: Project Identifier
+      description: |
+        You can send your project configurations by running `amplify diagnose --send-report` and share the Project Identifier. 
+        Learn more at https://docs.amplify.aws/cli/reference/diagnose/
 
   - type: textarea
     attributes:

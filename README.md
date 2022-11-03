@@ -4,12 +4,12 @@
   </a>
 </p>
 <h1 align="center">
-  Amplify Admin UI Issue Tracker
+  Amplify Studio (formerly Admin UI) Issue Tracker
 </h1>
 
 [![DiscordChat](https://img.shields.io/discord/308323056592486420?logo=discord")](https://discord.gg/jWVbPfC)
 
-The Amplify Admin UI is an AWS service that gives customers an external console to configure and manage app backend environments.
+AWS Amplify Studio extends AWS Amplify with a visual interface to help customers go from design to feature-rich, full-stack apps.
 
 ### Report a bug 🐛or feature request 💡[here](https://github.com/aws-amplify/amplify-adminui/issues/new/choose)
 

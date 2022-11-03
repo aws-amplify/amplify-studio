@@ -2,18 +2,30 @@
 :::CREATE:::
 
 ```swift
-var model = :::MODEL:::(:::FIELDS:::)
-Amplify.API.mutate(request: .create(model)) { event in
-    switch event {
-    case .success(let result):
+import Amplify
+import AWSPluginsCore
+```
+
+```swift
+:::NO_COPY:::
+...
+```
+
+```swift
+func create:::MODEL:::() async {
+    var model = :::MODEL:::(:::FIELDS:::)
+    do {
+        let result = try await Amplify.API.mutate(request: .create(model))
         switch result {
         case .success(let model):
             print("Successfully created :::MODEL:::: \(model)")
-        case .failure(let error):
-            print("Got failed result with \(error.errorDescription)")
+        case .failure(let graphQLError):
+            print("Failed to create graphql \(graphQLError)")
         }
-    case .failure(let error):
-        print("Got failed event with error \(error)")
+    } catch let error as APIError {
+        print("Failed to create :::MODEL::: - \(error)")
+    } catch {
+        print("Unexpected error: \(error)")
     }
 }
 ```
@@ -22,18 +34,29 @@ Amplify.API.mutate(request: .create(model)) { event in
 :::UPDATE:::
 
 ```swift
-// Retrieve your :::MODEL::: using Amplify.API.query
-Amplify.API.mutate(request: .update(updatedModel)) { event in
-    switch event {
-    case .success(let result):
+import Amplify
+import AWSPluginsCore
+```
+
+```swift
+:::NO_COPY:::
+...
+```
+
+```swift
+func update:::MODEL:::(updatedModel: :::MODEL:::) async {
+    do {
+        let result = try await Amplify.API.mutate(request: .update(updatedModel))
         switch result {
         case .success(let model):
             print("Successfully updated :::MODEL:::: \(model)")
         case .failure(let error):
             print("Got failed result with \(error.errorDescription)")
         }
-    case .failure(let error):
-        print("Got failed event with error \(error)")
+    } catch let error as APIError {
+        print("Failed to update :::MODEL::: - \(error)")
+    } catch {
+        print("Unexpected error: \(error)")
     }
 }
 ```
@@ -42,18 +65,29 @@ Amplify.API.mutate(request: .update(updatedModel)) { event in
 :::DELETE:::
 
 ```swift
-// Retrieve your :::MODEL::: using Amplify.API.query
-Amplify.API.mutate(request: .delete(modelToBeDeleted)) { event in
-    switch event {
-    case .success(let result):
+import Amplify
+import AWSPluginsCore
+```
+
+```swift
+:::NO_COPY:::
+...
+```
+
+```swift
+func delete:::MODEL:::(toBeDeleted: :::MODEL:::) async {
+    do {
+        let result = try await Amplify.API.mutate(request: .delete(toBeDeleted))
         switch result {
         case .success(let model):
             print("Successfully deleted :::MODEL:::: \(model)")
         case .failure(let error):
             print("Got failed result with \(error.errorDescription)")
         }
-    case .failure(let error):
-        print("Got failed event with error \(error)")
+    } catch let error as APIError {
+        print("Failed to delete :::MODEL::: - \(error)")
+    } catch {
+        print("Unexpected error: \(error)")
     }
 }
 ```
@@ -62,23 +96,37 @@ Amplify.API.mutate(request: .delete(modelToBeDeleted)) { event in
 :::QUERY:::
 
 ```swift
-func get:::MODEL:::() {
-    Amplify.API.query(request: .get(:::MODEL:::.self, byId: "YOUR_RECORD_ID")) { event in
-        switch event {
-        case .success(let result):
-            switch result {
-            case .success(let model):
-                guard let model = model else {
-                    print("Could not find :::MODEL:::")
-                    return
-                }
-                print("Successfully retrieved :::MODEL:::: \(model)")
-            case .failure(let error):
-                print("Got failed result with \(error.errorDescription)")
+
+import Amplify
+import AWSPluginsCore
+```
+
+```swift
+:::NO_COPY:::
+...
+```
+
+```swift
+func get:::MODEL:::() async {
+    do {
+        let result = try await Amplify.API.query(
+            request: .get(:::MODEL:::.self,
+            byId: "ENTER MODEL ID HERE")
+        )
+        switch result {
+        case .success(let model):
+            guard let model = model else {
+                print("Could not find model")
+                return
             }
+            print("Successfully retrieved model: \(model)")
         case .failure(let error):
-            print("Got failed event with error \(error)")
+            print("Got failed result with \(error)")
         }
+    } catch let error as APIError {
+        print("Failed to query :::MODEL::: - \(error)")
+    } catch {
+        print("Unexpected error: \(error)")
     }
 }
 ```
