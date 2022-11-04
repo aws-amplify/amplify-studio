@@ -122,14 +122,11 @@ Here we've first created a new `Post` instance and a new `Tag` instance. Then, s
 
 **Query**
 
-To query many-to-many relationships, filter the join model based on one of the model's _id_.
+To query many-to-many relationships, query either model with a nested predicate of the other model's primary key.
 
 ```js
-const postTags = await post.postTags.toArray() ?? []
-const tags = await Promise.all(postTags.map(pt => pt.tag))
+await tags = await DataStore.query(Tag, t => t.posts.post.id.eq(post.id))
 ```
-
-In this example, first get the model instances from the _join model_ `PostTag` with your `Post`, then map the `PostTag`s to `Tag`s.
 
 **Delete**
 
@@ -138,10 +135,13 @@ Deleting the _join model instance_ will not delete any source model instances.
 ```js
 await DataStore.delete(toBeDeletedPostTag)
 ```
+
 Both the `Post` and the `Tag` instances will not be deleted. Only the join model instances containing the link between a `Post` and a `Tag`.  
 
 Deleting a _source model instance_ will also delete the join model instances containing the source model instance.
+
 ```js
 await DataStore.delete(toBeDeletedTag)
 ```
+
 The `toBeDeletedTag` `Tag` instance and all `PostTag` instances where _tag_ is linked to `toBeDeletedTag` will be deleted.
