@@ -77,6 +77,9 @@ const articles = await publication.articles.toArray()
 for await (const article of publication.articles) {
   console.log(article)
 }
+
+// Option 3: use nested query predicates
+const articles = await DataStore.query(Article, a => a.publication.id.eq('YOUR_PUBLICATION_ID'));
 ```
 
 **Delete**
