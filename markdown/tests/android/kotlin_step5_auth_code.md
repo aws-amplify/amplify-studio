@@ -13,7 +13,7 @@ Amplify.Auth.fetchAuthSession(
 Amplify.Auth.signIn(
     "username",
     "password",
-    result -> Log.i("Amplify Auth", result.isSignInComplete() ? "Sign in succeeded" : "Sign in not complete"),
+    result -> Log.i("Amplify Auth", result.isSignedIn() ? "Sign in succeeded" : "Sign in not complete"),
     error -> Log.e("Amplify Auth", error.toString())
 );
 ```
@@ -21,8 +21,7 @@ Amplify.Auth.signIn(
 :::SIGNOUT:::
 ```java
 Amplify.Auth.signOut(
-    () -> Log.i("Amplify Auth", "Signed out successfully"),
-    error -> Log.e("Amplify Auth", error.toString())
+    onComplete -> Log.i("Amplify Auth", "Signed out successfully completed")
 );
 ```
 :::NEW_COMMAND:::
