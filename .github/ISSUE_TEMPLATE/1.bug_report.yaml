@@ -1,5 +1,7 @@
 name: Bug report
 description: Create a report to help us improve the Amplify Admin UI
+labels: ["pending-triage"]
+
 body:
   - type: markdown
     attributes:
@@ -7,7 +9,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        **Note**: If your issue is regarding the AWS Amplify CLI, please log it in the [Amplify CLI GitHub Issue Tracker](https://github.com/aws-amplify/amplify-cli/issues).
+        Thank you for taking the time to fill out this bug report! Try to include as much information as you can.
+
+        > For **Amplify Console** issues, go [here](https://github.com/aws-amplify/amplify-console/issues/new/choose).
+        > For **Amplify CLI** issues, go [here](https://github.com/aws-amplify/amplify-cli/issues/new/choose).
+        > For **Amplify UI** issues, go [here](https://github.com/aws-amplify/amplify-ui/issues/new/choose).
 
   - type: checkboxes
     attributes:
@@ -19,6 +25,8 @@ body:
         - label: I have read the guide for [submitting bug reports](https://github.com/aws-amplify/amplify-adminui/blob/main/CONTRIBUTING.md#bug-reports).
           required: true
         - label: I have done my best to include a minimal, self-contained set of instructions for consistently reproducing the issue.
+          required: true
+        - label: I have removed any sensitive information from my code snippets and submission.
           required: true
 
   - type: markdown
