@@ -9,11 +9,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to fill out this bug report! Try to include as much information as you can.
+        > **Note**: If your question is regarding the AWS Amplify Hosting, Amplify UI, or Amplify CLI, refer to
+        > - For **Amplify Hosting** issues, visit [amplify-hosting](https://github.com/aws-amplify/amplify-hosting/issues/new/choose)
+        > - For **Amplify UI** issues, visit [amplify-ui](https://github.com/aws-amplify/amplify-ui/issues/new/choose)
+        > - For **Amplify CLI** issues, visit [amplify-cli](https://github.com/aws-amplify/amplify-cli/issues/new/choose)
 
-        - For **Amplify CLI** issues, visit [amplify-cli](https://github.com/aws-amplify/amplify-cli/issues/new/choose)
-        - For **Amplify Hosting** issues, visit [amplify-hosting](https://github.com/aws-amplify/amplify-hosting/issues/new/choose)
-        - For **Amplify UI** issues, visit [amplify-ui](https://github.com/aws-amplify/amplify-ui/issues/new/choose).
 
   - type: checkboxes
     attributes:
