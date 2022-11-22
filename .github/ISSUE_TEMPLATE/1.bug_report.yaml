@@ -1,5 +1,5 @@
 name: Bug report
-description: Create a report to help us improve the Amplify Admin UI
+description: Create a report to help us improve the Amplify Studio
 labels: ["pending-triage"]
 
 body:
@@ -11,9 +11,9 @@ body:
       value: |
         Thank you for taking the time to fill out this bug report! Try to include as much information as you can.
 
-        > For **Amplify Console** issues, go [here](https://github.com/aws-amplify/amplify-console/issues/new/choose).
-        > For **Amplify CLI** issues, go [here](https://github.com/aws-amplify/amplify-cli/issues/new/choose).
-        > For **Amplify UI** issues, go [here](https://github.com/aws-amplify/amplify-ui/issues/new/choose).
+        - For **Amplify CLI** issues, visit [amplify-cli](https://github.com/aws-amplify/amplify-cli/issues/new/choose)
+        - For **Amplify Hosting** issues, visit [amplify-hosting](https://github.com/aws-amplify/amplify-hosting/issues/new/choose)
+        - For **Amplify UI** issues, visit [amplify-ui](https://github.com/aws-amplify/amplify-ui/issues/new/choose).
 
   - type: checkboxes
     attributes:
