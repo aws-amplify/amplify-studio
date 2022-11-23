@@ -1,5 +1,5 @@
 name: Usage Question
-about: Ask a question about AWS Amplify Studio usage
+description: Ask a question about AWS Amplify Studio usage
 labels: ["question","pending-triage"]
 
 body:
