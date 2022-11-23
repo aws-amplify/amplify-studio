@@ -1,0 +1,27 @@
+name: Usage Question
+description: Ask a question about AWS Amplify Studio usage
+labels: ["question","pending-triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting this question!
+
+        > **Note**: If your question is regarding the AWS Amplify Hosting, Amplify UI, or Amplify CLI, refer to
+        > - For **Amplify Hosting** issues, visit [amplify-hosting](https://github.com/aws-amplify/amplify-hosting/issues/new/choose)
+        > - For **Amplify UI** issues, visit [amplify-ui](https://github.com/aws-amplify/amplify-ui/issues/new/choose)
+        > - For **Amplify CLI** issues, visit [amplify-cli](https://github.com/aws-amplify/amplify-cli/issues/new/choose)
+  
+  - type: input
+    attributes:
+      label: Which Specific Feature is your question related to?
+      placeholder: Name of the feature
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Question
+      description: Provide relevant details (e.g. code snippets). _Be sure to remove any sensitive data._
+
