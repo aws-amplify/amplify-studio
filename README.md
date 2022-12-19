@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://console.amplify.aws">
-    <img alt="Amplify" src="https://github.com/aws-amplify/community/blob/master/src/assets/images/logo-dark.png" width="60" />
+    <img alt="Amplify" src="https://github.com/aws-amplify/docs/blob/main/public/images/Logos/Amplify%20Logo.svg" />
   </a>
 </p>
 <h1 align="center">
