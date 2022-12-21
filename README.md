@@ -14,13 +14,35 @@ AWS Amplify Studio is a visual development environment for building fullstack we
 
 With Studio, you can quickly build an entire web app, front-to-back, with minimal coding, while still maintaining full control over your app design and behavior through code. Ship faster, scale effortlessly, and delight every user.
 
-### Visit our [Documentation site](https://docs.amplify.aws/) to learn more about AWS Amplify. To learn more about [Amplify Studio](https://docs.amplify.aws/console) visit Studio documentation for a list of features supported.
+---
+
+### Visit our [Documentation site](https://docs.amplify.aws/) to learn more about AWS Amplify. To learn more about [Amplify Studio](https://docs.amplify.aws/console) visit Studio documentation for exciting features supported
 
 ## Get started without an AWS account
 
 If you are new to AWS, you don't need an AWS account to get started. You can still model and test your data before deploying to the cloud. After building your data model, you must connect an AWS account to deploy your backend environment to Amplify using Amplify Studio.
 
 - [Sandbox](https://sandbox.amplifyapp.com)
+
+---
+
+### Feature
+
+<table width="100%">
+<tr>
+<td>
+  <img width="100%" height="0">
+  <a href="https://docs.amplify.aws/console/data/data-model/">
+  <img src="https://docs.amplify.aws/images/console/datamodel.gif" alt="data-modeling" width="55%" align="right">
+  </a>
+<h3> Data modelling for GraphQL API</h3>
+
+  <p width="60%">
+  The Studio data model designer provides a visual way to define your app's data model, relationships, and authorization rules.
+  </p>
+</td>
+</tr>
+</table>
 
 ### Other Amplify projects
 
