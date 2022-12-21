@@ -33,7 +33,7 @@ If you are new to AWS, you don't need an AWS account to get started. You can sti
 <td>
   <img width="100%" height="0">
   <a href="https://docs.amplify.aws/console/data/data-model/">
-  <img src="https://docs.amplify.aws/images/console/datamodel.gif" alt="data-modeling" width="55%" align="right">
+  <img src="https://docs.amplify.aws/images/console/datamodel.gif" alt="data-modeling" width="40%" align="right">
   </a>
 <h3> Data modelling for GraphQL API</h3>
 
