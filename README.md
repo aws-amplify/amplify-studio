@@ -28,13 +28,14 @@ If you are new to AWS, you don't need an AWS account to get started. You can sti
 
 ### Feature
 
-<table width="100%">
+<!-- <table width="100%">
 <tr>
 <td>
   <img width="100%" height="0">
-  <a href="https://docs.amplify.aws/console/data/data-model/">
-  <img src="https://docs.amplify.aws/images/console/datamodel.gif" alt="data-modeling" width="40%" align="right">
+  <a href="https://docs.amplify.aws/console/data/data-model/" >
+  <img src="https://docs.amplify.aws/images/console/datamodel.gif" alt="data-modeling" width="40%" align="right" />
   </a>
+
 <h3> Data modelling for GraphQL API</h3>
 
   <p width="60%">
@@ -42,7 +43,13 @@ If you are new to AWS, you don't need an AWS account to get started. You can sti
   </p>
 </td>
 </tr>
-</table>
+</table> -->
+
+
+| Data modelling for GraphQL API     | The Studio data model designer provides a visual way to define your app's data model, relationships, and authorization rules.      | ![](https://docs.amplify.aws/images/console/datamodel.gif)   
+| Figma to code | To accelerate UI development, Amplify Studio uses the Amplify UI library to offer dozens of components such as news feeds, contact forms, and e-commerce cards and primitives such as buttons, text areas, and alerts. All UI components are fully customizable within Figma, giving designers complete control over the visual styling of components within tooling they are familiar with. All Figma components are imported into Studio as React components that are as good as hand-authored code. | ![](https://docs.amplify.aws/images/console/ui-figmatocode.png)    |
+| `John`        | Test1         | `NewYork`   |
+| `Bob`         | Test2         | `Toronto`   |
 
 ### Other Amplify projects
 
