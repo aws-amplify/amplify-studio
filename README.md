@@ -14,29 +14,13 @@ AWS Amplify Studio is a visual development environment for building fullstack we
 
 With Studio, you can quickly build an entire web app, front-to-back, with minimal coding, while still maintaining full control over your app design and behavior through code. Ship faster, scale effortlessly, and delight every user.
 
-### Visit our [Documentation site](https://docs.amplify.aws/) to learn more about AWS Amplify. To learn more about [Amplify Studio](https://docs.amplify.aws/console) visit Studio documentation on features supported.
+### Visit our [Documentation site](https://docs.amplify.aws/) to learn more about AWS Amplify. To learn more about [Amplify Studio](https://docs.amplify.aws/console) visit Studio documentation for a list of features supported.
 
 ## Get started without an AWS account
 
-The sandbox interface lets you perform the following tasks:
- * Set up your data model. For instructions on creating models and setting relationships, see [Data modeling in Amplify Studio](/console/data/data-model#Data-modeling-in-the-Admin-UI).
- * Test your new data model locally.
- * Deploy your backend to the cloud. This requires an AWS account.
-
-<Card
-  external
-  href="https://sandbox.amplifyapp.com/"
-  containertag="amplify-external-link"
->
-  <CardGraphic alt="Amplify Studio logo" src="/images/console/adminui.svg" />
-  <CardDetail>
-    <h4>Launch Sandbox</h4>
-    <p>Get started without an AWS account</p>
-  </CardDetail>
-</Card>
+If you are new to AWS, you don't need an AWS account to get started. You can still model and test your data before deploying to the cloud. After building your data model, you must connect an AWS account to deploy your backend environment to Amplify using Amplify Studio.
 
 - [Sandbox](https://sandbox.amplifyapp.com)
-- [Official documentation](https://docs.amplify.aws/console)
 
 ### Other Amplify projects
 
