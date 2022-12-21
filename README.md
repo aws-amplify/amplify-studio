@@ -16,7 +16,7 @@ With Studio, you can quickly build an entire web app, front-to-back, with minima
 
 ---
 
-### Visit our [Documentation site](https://docs.amplify.aws/) to learn more about AWS Amplify. To learn more about [Amplify Studio](https://docs.amplify.aws/console) visit Studio documentation for exciting features supported
+### Visit our [Documentation site](https://docs.amplify.aws/) to learn more about AWS Amplify. To learn more about exciting features supported on [Amplify Studio](https://docs.amplify.aws/console) visit Studio documentation.
 
 ## Get started without an AWS account
 
