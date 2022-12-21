@@ -18,7 +18,7 @@ With Studio, you can quickly build an entire web app, front-to-back, with minima
 
 ### Visit our [Documentation site](https://docs.amplify.aws/) to learn more about AWS Amplify. To learn more about exciting features supported on [Amplify Studio](https://docs.amplify.aws/console) visit Studio documentation.
 
-## Get started without an AWS account
+### Get started without an AWS account
 
 If you are new to AWS, you don't need an AWS account to get started. You can still model and test your data before deploying to the cloud. After building your data model, you must connect an AWS account to deploy your backend environment to Amplify using Amplify Studio.
 
