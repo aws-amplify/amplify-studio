@@ -28,7 +28,7 @@ To query one-to-one relationships, access the target model instance through its 
 
 ```js
 const country = await DataStore.query(Country, "YOUR_COUNTRY_ID")
-const author = await country.capital
+const capital = await country.capital
 ```
 
 **Delete**
