@@ -19,5 +19,5 @@ Amplify also offers a REST API category that can be used for creating signed req
 :::KEY_FEATURES_END:::
 
 :::VIDEO_WALKTHROUGH:::
-https://www.youtube-nocookie.com/embed/Rz_wK6z8kMU
+
 :::VIDEO_WALKTHROUGH_END:::
