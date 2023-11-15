@@ -1,7 +1,7 @@
 :::NEW_COMMAND:::
 :::CREATE:::
 ```js
-import { DataStore } from '@aws-amplify/datastore';
+import { DataStore } from 'aws-amplify/datastore';
 import { :::MODEL::: } from './models';
 ```
 ```js
@@ -16,7 +16,7 @@ await DataStore.save(
 :::NEW_COMMAND:::
 :::UPDATE:::
 ```js
-import { DataStore } from '@aws-amplify/datastore';
+import { DataStore } from 'aws-amplify/datastore';
 import { :::MODEL::: } from './models';
 ```
 ```js
@@ -33,7 +33,7 @@ await DataStore.save(:::MODEL:::.copyOf(CURRENT_ITEM, item => {
 :::NEW_COMMAND:::
 :::DELETE:::
 ```js
-import { DataStore } from '@aws-amplify/datastore';
+import { DataStore } from 'aws-amplify/datastore';
 import { :::MODEL::: } from './models';
 ```
 ```js
@@ -47,7 +47,7 @@ DataStore.delete(modelToDelete);
 :::NEW_COMMAND:::
 :::QUERY:::
 ```js
-import { DataStore } from '@aws-amplify/datastore';
+import { DataStore } from 'aws-amplify/datastore';
 import { :::MODEL::: } from './models';
 ```
 ```js

@@ -8,7 +8,7 @@ Configure the Vue app's Amplify instance. Add the following code snippet to the 
 
 ```js
 import { Amplify } from "aws-amplify";
-import awsconfig from "./aws-exports";
+import amplifyconfig from './amplifyconfiguration.json';
 
-Amplify.configure(awsconfig);
+Amplify.configure(amplifyconfig);
 ```

@@ -2,8 +2,10 @@
 :::CREATE:::
 
 ```js
-import { API } from "aws-amplify";
+import { generateClient } from "aws-amplify/api";
 import { create:::MODEL::: } from './graphql/mutations';
+
+const client = generateClient()
 ```
 
 ```js
@@ -12,7 +14,7 @@ import { create:::MODEL::: } from './graphql/mutations';
 ```
 
 ```js
-const new:::MODEL::: = await API.graphql({
+const new:::MODEL::: = await client.graphql({
     query: create:::MODEL:::,
     variables: {
         input: {:::FIELDS:::}
@@ -24,8 +26,10 @@ const new:::MODEL::: = await API.graphql({
 :::UPDATE:::
 
 ```js
-import { API } from "aws-amplify";
+import { generateClient } from "aws-amplify/api";
 import { update:::MODEL::: } from './graphql/mutations';
+
+const client = generateClient()
 ```
 
 ```js
@@ -34,7 +38,7 @@ import { update:::MODEL::: } from './graphql/mutations';
 ```
 
 ```js
-const updated:::MODEL::: = await API.graphql({
+const updated:::MODEL::: = await client.graphql({
     query: update:::MODEL:::,
     variables: {
         input: todoDetails
@@ -46,8 +50,10 @@ const updated:::MODEL::: = await API.graphql({
 :::DELETE:::
 
 ```js
-import { API } from "aws-amplify";
+import { generateClient } from "aws-amplify/api";
 import { delete:::MODEL::: } from './graphql/mutations';
+
+const client = generateClient()
 ```
 
 ```js
@@ -56,7 +62,7 @@ import { delete:::MODEL::: } from './graphql/mutations';
 ```
 
 ```js
-const deleted:::MODEL::: = await API.graphql({
+const deleted:::MODEL::: = await client.graphql({
     query: delete:::MODEL:::,
     variables: {
         input: todoDetails
@@ -68,8 +74,10 @@ const deleted:::MODEL::: = await API.graphql({
 :::QUERY:::
 
 ```js
-import { API } from "aws-amplify";
+import { generateClient } from "aws-amplify/api";
 import * as queries from "./graphql/queries";
+
+const client = generateClient()
 ```
 
 ```js
@@ -79,14 +87,14 @@ import * as queries from "./graphql/queries";
 
 ```js
 // Simple query
-const all:::MODEL:::s = await API.graphql({
+const all:::MODEL:::s = await client.graphql({
     query: queries.list:::MODEL:::s
 });
 console.log(all:::MODEL:::);
 // result: { "data": { "list:::MODEL:::s": { "items": [/* ..... */] } } }
 
 // Query using a parameter
-const one:::MODEL::: = await API.graphql({
+const one:::MODEL::: = await client.graphql({
     query: queries.get:::MODEL:::,
     variables: { id: 'some id' }
 });

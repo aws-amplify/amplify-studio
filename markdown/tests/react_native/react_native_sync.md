@@ -7,8 +7,8 @@ Pull in the latest backend information into your app's code base.
 
 2. Make sure `Amplify` initialized and configured correctly.
 ```js
-import Amplify from 'aws-amplify'
-import awsconfig from './aws-exports'
+import { Amplify } from 'aws-amplify'
+import amplifyconfig from './amplifyconfiguration.json'
 
-Amplify.configure(awsconfig)
+Amplify.configure(amplifyconfig)
 ```
