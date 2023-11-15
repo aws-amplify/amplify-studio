@@ -88,7 +88,7 @@ LIST_PUBLIC
 import { list } from 'aws-amplify/storage';
 
 try {
-  const result = await await list({
+  const result = await list({
     prefix: 'photos/'
   });
 } catch (error) {
@@ -101,7 +101,7 @@ LIST_PROTECTED
 import { list } from 'aws-amplify/storage';
 
 try {
-  const result = await await list({
+  const result = await list({
     prefix: 'photos/',
     options: {
       accessLevel: 'protected'
