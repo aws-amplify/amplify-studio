@@ -10,7 +10,7 @@ Pull in the latest backend information into your app's code base.
 
 ```js
 import { Amplify } from "aws-amplify";
-import awsconfig from "./aws-exports";
+import amplifyconfig from './amplifyconfiguration.json';
 
-Amplify.configure(awsconfig);
+Amplify.configure(amplifyconfig);
 ```

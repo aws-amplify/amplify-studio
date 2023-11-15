@@ -13,8 +13,8 @@ npm install aws-amplify
 
 Configure the Angular app's Amplify instance. Add the following code snippet to the top of your **main.ts**:
 ```ts
-import Amplify from 'aws-amplify'
-import awsconfig from './aws-exports'
+import { Amplify } from 'aws-amplify'
+import amplifyconfig from './amplifyconfiguration.json'
 
-Amplify.configure(awsconfig)
+Amplify.configure(amplifyconfig)
 ```

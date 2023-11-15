@@ -1,106 +1,174 @@
 :::NEW_COMMAND:::
 UPLOAD_PUBLIC
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { uploadData } from 'aws-amplify/storage';
 
-await Storage.put("test.txt", "Hello");
+try {
+  const result = await uploadData({
+    key: filename,
+    data: file
+  }).result;
+  console.log('Succeeded: ', result);
+} catch (error) {
+  console.log('Error : ', error);
+}
 ```
 :::NEW_COMMAND:::
 UPLOAD_PROTECTED
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { uploadData } from 'aws-amplify/storage';
 
-await Storage.put('test.txt', 'Protected Content', {
-    level: 'protected',
-    contentType: 'text/plain'
-});
+try {
+  const result = await uploadData({
+    key: filename,
+    data: file,
+    options: {
+        accessLevel: 'protected'
+    }
+  }).result;
+  console.log('Succeeded: ', result);
+} catch (error) {
+  console.log('Error : ', error);
+}
 ```
 :::NEW_COMMAND:::
 UPLOAD_PRIVATE
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { uploadData } from 'aws-amplify/storage';
 
-await Storage.put('test.txt', 'Private Content', {
-    level: 'private',
-    contentType: 'text/plain'
-});
+try {
+  const result = await uploadData({
+    key: filename,
+    data: file,
+    options: {
+        accessLevel: 'private'
+    }
+  }).result;
+  console.log('Succeeded: ', result);
+} catch (error) {
+  console.log('Error : ', error);
+}
 ```
 :::NEW_COMMAND:::
 DOWNLOAD_PUBLIC
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { getUrl } from 'aws-amplify/storage';
 
-await Storage.get('test.txt', { 
-    level: 'public'
+const getUrlResult = await getUrl({
+  key: filename,
 });
 ```
 :::NEW_COMMAND:::
 DOWNLOAD_PROTECTED
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { getUrl } from 'aws-amplify/storage';
 
-await Storage.get('test.txt', { 
-    level: 'protected'
-    identityId: 'xxxxxxx' // The identityId of that user. Omit to get current user's objects.
+const getUrlResult = await getUrl({
+  key: filename,
+  options: {
+    accessLevel: 'protected' 
+  }
 });
 ```
 :::NEW_COMMAND:::
 DOWNLOAD_PRIVATE
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { getUrl } from 'aws-amplify/storage';
 
-await Storage.get('test.txt', { 
-    level: 'private'
+const getUrlResult = await getUrl({
+  key: filename,
+  options: {
+    accessLevel: 'private' 
+  }
 });
 ```
 :::NEW_COMMAND:::
 LIST_PUBLIC
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { list } from 'aws-amplify/storage';
 
-Storage.list('photos/') // for listing ALL files without prefix, pass '' instead
-        .then(result => console.log(result))
-        .catch(err => console.log(err));
+try {
+  const result = await await list({
+    prefix: 'photos/'
+  });
+} catch (error) {
+  console.log(error);
+}
 ```
 :::NEW_COMMAND:::
 LIST_PROTECTED
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { list } from 'aws-amplify/storage';
 
-Storage.list('photos/', { 
-        level: 'protected', 
-        identityId: 'xxxxxxx' // The identityId of that user. Omit to get current user's objects.
-    })
-    .then(result => console.log(result))
-    .catch(err => console.log(err));
+try {
+  const result = await await list({
+    prefix: 'photos/',
+    options: {
+      accessLevel: 'protected'
+    }
+  });
+} catch (error) {
+  console.log(error);
+}
 ```
 :::NEW_COMMAND:::
 LIST_PRIVATE
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { list } from 'aws-amplify/storage';
 
-Storage.list('photos/', { level: 'private' })
-        .then(result => console.log(result))
-        .catch(err => console.log(err));
+try {
+  const response = await list({
+    prefix: 'photos/',
+    options:  {
+        accessLevel: 'private',
+    }
+  })
+  console.log('Listed Items:', response.items);
+} catch(error) {
+  console.log('Error ': error);
+}
+
 ```
 :::NEW_COMMAND:::
 REMOVE_PUBLIC
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { remove } from 'aws-amplify/storage';
 
-await Storage.remove('test.txt');
+try {
+  await remove({ key: filename });
+} catch (error) {
+  console.log('Error ', error);
+}
 ```
 :::NEW_COMMAND:::
 REMOVE_PROTECTED
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { remove } from 'aws-amplify/storage';
 
-await Storage.remove('test.txt', { level: 'protected' });
+try {
+  await remove({
+    key: filename,
+    options: {
+      accessLevel: 'protected'
+    }
+  });
+} catch (error) {
+  console.log('Error ', error);
+}
 ```
 :::NEW_COMMAND:::
 REMOVE_PRIVATE
 ```js
-import { Storage } from "@aws-amplify/storage"
+import { remove } from 'aws-amplify/storage';
 
-await Storage.remove('test.txt', { level: 'private' });
+try {
+  await remove({
+    key: filename,
+    options: {
+      accessLevel: 'private'
+    }
+  });
+} catch (error) {
+  console.log('Error ', error);
+}
 ```
