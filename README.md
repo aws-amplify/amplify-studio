@@ -7,8 +7,11 @@
   Amplify Studio (formerly Admin UI) Issue Tracker
 </h1>
 
+> [!NOTE]
+> This repository only accepts new feature requests for AWS Amplify Studio. For technical support, we encourage you to open a case with [AWS technical support](https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#creating-a-support-case) if you have AWS support plan. If you do not have an active AWS support plan, we encourage you to leverage our Amplify community [Discord server](https://discord.gg/amplify) where community members and staff try to help each other with Amplify.
+
 [![DiscordChat](https://img.shields.io/discord/308323056592486420?logo=discord")](https://discord.gg/jWVbPfC)
-### Report a bug 🐛 or feature request 💡[here](https://github.com/aws-amplify/amplify-adminui/issues/new/choose)
+
 
 AWS Amplify Studio is a visual development environment for building fullstack web and mobile apps. Studio builds on existing backend building capabilities in AWS Amplify, allowing you to accelerate your UI development as well. 
 
