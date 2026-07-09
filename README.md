@@ -7,8 +7,16 @@
   Amplify Studio (formerly Admin UI) Issue Tracker
 </h1>
 
+> [!IMPORTANT]
+> **Maintenance mode.** Amplify Gen 1 — including Amplify Studio, which builds on
+> it — is in maintenance mode. As of **May 1, 2026** Gen 1 backends receive only
+> critical bug fixes and security patches; **end of life is May 1, 2027**. We
+> recommend migrating to Amplify Gen 2 to keep receiving new features and support.
+> See the [official announcement](https://github.com/aws-amplify/amplify-cli/issues/14881)
+> and the [Gen 1 → Gen 2 migration guide](https://docs.amplify.aws/react/start/migrate-to-gen2/).
+
 > [!NOTE]
-> This repository only accepts new feature requests for AWS Amplify Studio. For technical support, we encourage you to open a case with [AWS technical support](https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#creating-a-support-case) if you have AWS support plan. If you do not have an active AWS support plan, we encourage you to leverage our Amplify community [Discord server](https://discord.gg/amplify) where community members and staff try to help each other with Amplify.
+> This repository is in maintenance mode and no longer accepts new feature requests for AWS Amplify Studio. For technical support, we encourage you to open a case with [AWS technical support](https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#creating-a-support-case) if you have AWS support plan. If you do not have an active AWS support plan, we encourage you to leverage our Amplify community [Discord server](https://discord.gg/amplify) where community members and staff try to help each other with Amplify.
 
 [![DiscordChat](https://img.shields.io/discord/308323056592486420?logo=discord")](https://discord.gg/jWVbPfC)
 
